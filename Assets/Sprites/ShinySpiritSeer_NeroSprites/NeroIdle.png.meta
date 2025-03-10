@@ -1,0 +1,1105 @@
+fileFormatVersion: 2
+guid: a2ee245cc0caabd4c9be7263548e9268
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8399617422913567960
+    second: NeroIdle_0
+  - first:
+      213: -1534578268274857833
+    second: NeroIdle_1
+  - first:
+      213: -1655919500170776634
+    second: NeroIdle_2
+  - first:
+      213: -2840818283640144582
+    second: NeroIdle_3
+  - first:
+      213: -7531195048987392994
+    second: NeroIdle_4
+  - first:
+      213: 4699010009721845804
+    second: NeroIdle_5
+  - first:
+      213: -3116653139912146463
+    second: NeroIdle_6
+  - first:
+      213: 4220518889201293327
+    second: NeroIdle_7
+  - first:
+      213: -8622852297347480558
+    second: NeroIdle_8
+  - first:
+      213: -1123963383272052006
+    second: NeroIdle_9
+  - first:
+      213: 8797944828276676032
+    second: NeroIdle_10
+  - first:
+      213: 4992268493597133079
+    second: NeroIdle_11
+  - first:
+      213: 1576283789860778358
+    second: NeroIdle_12
+  - first:
+      213: 2653227781605581863
+    second: NeroIdle_13
+  - first:
+      213: -9143661465116383998
+    second: NeroIdle_14
+  - first:
+      213: 7560262564455814813
+    second: NeroIdle_15
+  - first:
+      213: 2338874672592245810
+    second: NeroIdle_16
+  - first:
+      213: 4953897645602138539
+    second: NeroIdle_17
+  - first:
+      213: 4362071484691047963
+    second: NeroIdle_18
+  - first:
+      213: 6745874063618836329
+    second: NeroIdle_19
+  - first:
+      213: 4731631220198919551
+    second: NeroIdle_20
+  - first:
+      213: 8249255098268736213
+    second: NeroIdle_21
+  - first:
+      213: -6286276829011575795
+    second: NeroIdle_22
+  - first:
+      213: 3667574666846092984
+    second: NeroIdle_23
+  - first:
+      213: -4865652324322320500
+    second: NeroIdle_24
+  - first:
+      213: 5798868092270256196
+    second: NeroIdle_25
+  - first:
+      213: 4160072219213397051
+    second: NeroIdle_26
+  - first:
+      213: 9082590404286206168
+    second: NeroIdle_27
+  - first:
+      213: -7874226196840947615
+    second: NeroIdle_28
+  - first:
+      213: 1116687005815133986
+    second: NeroIdle_29
+  - first:
+      213: -5019601526686515407
+    second: NeroIdle_30
+  - first:
+      213: 6663866375460753804
+    second: NeroIdle_31
+  - first:
+      213: 7189365175480034140
+    second: NeroIdle_32
+  - first:
+      213: -4978803712972953903
+    second: NeroIdle_33
+  - first:
+      213: -6245418164871751405
+    second: NeroIdle_34
+  - first:
+      213: -7317843406026927993
+    second: NeroIdle_35
+  - first:
+      213: 3401172375679802672
+    second: NeroIdle_36
+  - first:
+      213: 6305139032927029399
+    second: NeroIdle_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NeroIdle_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8230e0af4709e6b80800000000000000
+      internalID: -8399617422913567960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_1
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 24
+        width: 253
+        height: 199
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798617f023514bae0800000000000000
+      internalID: -1534578268274857833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_2
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cfadafecfdf409e0800000000000000
+      internalID: -1655919500170776634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_3
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 25
+        width: 255
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3db13482d26398d0800000000000000
+      internalID: -2840818283640144582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_4
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 25
+        width: 254
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e140de24102db7790800000000000000
+      internalID: -7531195048987392994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_5
+      rect:
+        serializedVersion: 2
+        x: 2025
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28b97915bc363140800000000000000
+      internalID: 4699010009721845804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_6
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e14e636b7c6fb4d0800000000000000
+      internalID: -3116653139912146463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_7
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f085ba6819b429a30800000000000000
+      internalID: 4220518889201293327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_8
+      rect:
+        serializedVersion: 2
+        x: 3225
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21441f97589755880800000000000000
+      internalID: -8622852297347480558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_9
+      rect:
+        serializedVersion: 2
+        x: 3625
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adae5870241e660f0800000000000000
+      internalID: -1123963383272052006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_10
+      rect:
+        serializedVersion: 2
+        x: 4025
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c59ae23534981a70800000000000000
+      internalID: 8797944828276676032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_11
+      rect:
+        serializedVersion: 2
+        x: 4425
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7194b38aeb9184540800000000000000
+      internalID: 4992268493597133079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_12
+      rect:
+        serializedVersion: 2
+        x: 4825
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671bbdf51c510e510800000000000000
+      internalID: 1576283789860778358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_13
+      rect:
+        serializedVersion: 2
+        x: 5225
+        y: 24
+        width: 251
+        height: 199
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7246cc62c9822d420800000000000000
+      internalID: 2653227781605581863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_14
+      rect:
+        serializedVersion: 2
+        x: 5625
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2056f49b7503b1180800000000000000
+      internalID: -9143661465116383998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_15
+      rect:
+        serializedVersion: 2
+        x: 6025
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9692131fb27be860800000000000000
+      internalID: 7560262564455814813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_16
+      rect:
+        serializedVersion: 2
+        x: 6425
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234d4027f1a557020800000000000000
+      internalID: 2338874672592245810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_17
+      rect:
+        serializedVersion: 2
+        x: 6825
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba962cb69a7cfb440800000000000000
+      internalID: 4953897645602138539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_18
+      rect:
+        serializedVersion: 2
+        x: 7225
+        y: 26
+        width: 253
+        height: 197
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b16eed177e0398c30800000000000000
+      internalID: 4362071484691047963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_19
+      rect:
+        serializedVersion: 2
+        x: 7625
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 967858d38b82e9d50800000000000000
+      internalID: 6745874063618836329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_20
+      rect:
+        serializedVersion: 2
+        x: 8025
+        y: 24
+        width: 253
+        height: 199
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7dca1886812aa140800000000000000
+      internalID: 4731631220198919551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_21
+      rect:
+        serializedVersion: 2
+        x: 8425
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da53e13ecd3b7270800000000000000
+      internalID: 8249255098268736213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_22
+      rect:
+        serializedVersion: 2
+        x: 8825
+        y: 25
+        width: 255
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0cfef6b788a2c8a0800000000000000
+      internalID: -6286276829011575795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_23
+      rect:
+        serializedVersion: 2
+        x: 9225
+        y: 25
+        width: 254
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be35945ab7d5e230800000000000000
+      internalID: 3667574666846092984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_24
+      rect:
+        serializedVersion: 2
+        x: 9625
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fd6388dfab97cb0800000000000000
+      internalID: -4865652324322320500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_25
+      rect:
+        serializedVersion: 2
+        x: 10025
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440ad136ec7b97050800000000000000
+      internalID: 5798868092270256196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_26
+      rect:
+        serializedVersion: 2
+        x: 10425
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3c7f2274ab8bb930800000000000000
+      internalID: 4160072219213397051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_27
+      rect:
+        serializedVersion: 2
+        x: 10825
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0d9dfd9d7db0e70800000000000000
+      internalID: 9082590404286206168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_28
+      rect:
+        serializedVersion: 2
+        x: 11225
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16068305ef029b290800000000000000
+      internalID: -7874226196840947615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_29
+      rect:
+        serializedVersion: 2
+        x: 11625
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 227d7e25ae44f7f00800000000000000
+      internalID: 1116687005815133986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_30
+      rect:
+        serializedVersion: 2
+        x: 12025
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f77d7a10bc65ab0800000000000000
+      internalID: -5019601526686515407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_31
+      rect:
+        serializedVersion: 2
+        x: 12425
+        y: 24
+        width: 251
+        height: 199
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c81120c692fca7c50800000000000000
+      internalID: 6663866375460753804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_32
+      rect:
+        serializedVersion: 2
+        x: 12825
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c532d054981c5c360800000000000000
+      internalID: 7189365175480034140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_33
+      rect:
+        serializedVersion: 2
+        x: 13225
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6e9d1e66cb7eab0800000000000000
+      internalID: -4978803712972953903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_34
+      rect:
+        serializedVersion: 2
+        x: 13625
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3191c09c441d359a0800000000000000
+      internalID: -6245418164871751405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_35
+      rect:
+        serializedVersion: 2
+        x: 14025
+        y: 25
+        width: 252
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78094dd913cc17a90800000000000000
+      internalID: -7317843406026927993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_36
+      rect:
+        serializedVersion: 2
+        x: 14425
+        y: 25
+        width: 253
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d14486144633f20800000000000000
+      internalID: 3401172375679802672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroIdle_37
+      rect:
+        serializedVersion: 2
+        x: 14825
+        y: 25
+        width: 251
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798c01d5b8a508750800000000000000
+      internalID: 6305139032927029399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 960fd5868d40eb2428b8781441e0d847
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NeroIdle_0: -8399617422913567960
+      NeroIdle_1: -1534578268274857833
+      NeroIdle_10: 8797944828276676032
+      NeroIdle_11: 4992268493597133079
+      NeroIdle_12: 1576283789860778358
+      NeroIdle_13: 2653227781605581863
+      NeroIdle_14: -9143661465116383998
+      NeroIdle_15: 7560262564455814813
+      NeroIdle_16: 2338874672592245810
+      NeroIdle_17: 4953897645602138539
+      NeroIdle_18: 4362071484691047963
+      NeroIdle_19: 6745874063618836329
+      NeroIdle_2: -1655919500170776634
+      NeroIdle_20: 4731631220198919551
+      NeroIdle_21: 8249255098268736213
+      NeroIdle_22: -6286276829011575795
+      NeroIdle_23: 3667574666846092984
+      NeroIdle_24: -4865652324322320500
+      NeroIdle_25: 5798868092270256196
+      NeroIdle_26: 4160072219213397051
+      NeroIdle_27: 9082590404286206168
+      NeroIdle_28: -7874226196840947615
+      NeroIdle_29: 1116687005815133986
+      NeroIdle_3: -2840818283640144582
+      NeroIdle_30: -5019601526686515407
+      NeroIdle_31: 6663866375460753804
+      NeroIdle_32: 7189365175480034140
+      NeroIdle_33: -4978803712972953903
+      NeroIdle_34: -6245418164871751405
+      NeroIdle_35: -7317843406026927993
+      NeroIdle_36: 3401172375679802672
+      NeroIdle_37: 6305139032927029399
+      NeroIdle_4: -7531195048987392994
+      NeroIdle_5: 4699010009721845804
+      NeroIdle_6: -3116653139912146463
+      NeroIdle_7: 4220518889201293327
+      NeroIdle_8: -8622852297347480558
+      NeroIdle_9: -1123963383272052006
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

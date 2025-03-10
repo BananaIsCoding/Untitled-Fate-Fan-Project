@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 19706b36c5b9a464c9510b214f495ec7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1522079668250978528
+    second: NeroWalk_0
+  - first:
+      213: 6498580052745494699
+    second: NeroWalk_1
+  - first:
+      213: 6455504626183030432
+    second: NeroWalk_2
+  - first:
+      213: -8429256758470040442
+    second: NeroWalk_3
+  - first:
+      213: 1886842272944432339
+    second: NeroWalk_4
+  - first:
+      213: 3562616297607046357
+    second: NeroWalk_5
+  - first:
+      213: 5437889254660981529
+    second: NeroWalk_6
+  - first:
+      213: 544404163667272117
+    second: NeroWalk_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NeroWalk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 204
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8a1f9d4638f1510800000000000000
+      internalID: 1522079668250978528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 1
+        width: 204
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0a55480289f2a50800000000000000
+      internalID: 6498580052745494699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1
+        width: 203
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6c789314f869950800000000000000
+      internalID: 6455504626183030432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_3
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 1
+        width: 200
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68425d663a3450b80800000000000000
+      internalID: -8429256758470040442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_4
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1
+        width: 201
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d42b02ec096f2a10800000000000000
+      internalID: 1886842272944432339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_5
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1
+        width: 206
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d4a2e9a5a4f07130800000000000000
+      internalID: 3562616297607046357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_6
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 1
+        width: 210
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9134bf74773477b40800000000000000
+      internalID: 5437889254660981529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroWalk_7
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1
+        width: 206
+        height: 205
+      alignment: 9
+      pivot: {x: 0.425, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1a1a5d3bc1e8700800000000000000
+      internalID: 544404163667272117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 25a340575c92d8649b1ef6146b2d7e04
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NeroWalk_0: 1522079668250978528
+      NeroWalk_1: 6498580052745494699
+      NeroWalk_2: 6455504626183030432
+      NeroWalk_3: -8429256758470040442
+      NeroWalk_4: 1886842272944432339
+      NeroWalk_5: 3562616297607046357
+      NeroWalk_6: 5437889254660981529
+      NeroWalk_7: 544404163667272117
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

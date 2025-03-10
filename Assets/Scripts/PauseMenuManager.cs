@@ -3,9 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
+    // variables
     [Header("Canvas")]
     [SerializeField] private Canvas mainCanvas;
     [SerializeField] private Canvas controlCanvas;
+    // when certain buttons are pressed
+    #region Buttons function
     public void ResumeButton() 
     {
         Time.timeScale = 1.0f;
@@ -22,6 +25,7 @@ public class PauseMenuManager : MonoBehaviour
     public void BackToMainMenuButton()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        // 0 should be main menu
         SceneManager.LoadSceneAsync(0);
     }
     public void QuitButton()
@@ -38,4 +42,5 @@ public class PauseMenuManager : MonoBehaviour
         controlCanvas.enabled = false;
         mainCanvas.enabled = true;
     }
+    #endregion
 }
