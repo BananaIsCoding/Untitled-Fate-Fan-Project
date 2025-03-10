@@ -5,10 +5,11 @@ using UnityEngine.InputSystem;
 public class CameraRestrictionScript : MonoBehaviour
 {
     // variables
+    [SerializeField] Vector3 _presetCamPos;
+    [SerializeField] Vector3 _presetLocalPos;
     private GameObject _camareObject;
     private GameObject _player;
     private Vector3 _cameraPos;
-    private float _initialY;
     private MovementScript _playerMovementScript;
     private InputAction _jumpAction;
     private Coroutine _jumpCoroutine;
@@ -28,11 +29,20 @@ public class CameraRestrictionScript : MonoBehaviour
                 _playerMovementScript = _player.GetComponent<MovementScript>();
             }
             // unlinks the camera from char
-            _camareObject.transform.parent = transform;
+            _camareObject.transform.parent = transform.parent;
+            _camareObject.transform.position = _presetCamPos;
             // set up procedure to be called to relink the camera when player jumps
-            _jumpAction.performed += BindCameraWhenJump;
-            // set up procedure to be called to detach the camera when player lands
-            _playerMovementScript.JumpEndedEvent += UnBindCamera;
+            if (_player.transform.position.y > -1.595003 + 0.01f)
+            {
+                _cameraPos = _presetCamPos;
+                StartCoroutine(MoveCameraUp());
+                // function which set camera back onto the ground
+                _playerMovementScript.JumpEndedEvent += UnBindCamera;
+            }
+            else
+            {
+                _jumpAction.performed += BindCameraWhenJump;
+            }
         }
     }
     // when player leaves the edge of the map then rebind camera
@@ -40,34 +50,40 @@ public class CameraRestrictionScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            _camareObject.transform.parent = _player.transform;
             // and remove function link as it no longer needs to rebind each jump
             _jumpAction.performed -= BindCameraWhenJump;
             _playerMovementScript.JumpEndedEvent -= UnBindCamera;
             StopAllCoroutines();
+            // set the camera back to follow player position
+            _camareObject.transform.parent = _player.transform;
+            _camareObject.transform.localPosition = _presetLocalPos;
         }
     }
     private void BindCameraWhenJump(InputAction.CallbackContext context)
     {
-        _initialY = _camareObject.transform.position.y;
-        // caluate where char is from the camera so that when it is relinked to char, the camera does re-position itself based on where player is
-        _cameraPos = _camareObject.transform.position;
+        // So this can't be called muiltiple times
+        _jumpAction.performed -= BindCameraWhenJump;
+        _cameraPos = _presetCamPos;
         StartCoroutine(MoveCameraUp());
+        // function which set camera back onto the ground
+        _playerMovementScript.JumpEndedEvent += UnBindCamera;
     }
     IEnumerator MoveCameraUp()
     {
+        // moves cam up as based on how high player is in the air
         while (true)
         {
             yield return new WaitForFixedUpdate();
             _cameraPos.y = _player.transform.position.y + 0.6f;
             _camareObject.transform.position = _cameraPos;
-
         }
     }
     private void UnBindCamera()
     {
-        StopCoroutine(MoveCameraUp());
-        _cameraPos.y = _initialY;
-        _camareObject.transform.position = _cameraPos;
+        _playerMovementScript.JumpEndedEvent -= UnBindCamera;
+        StopAllCoroutines();
+        // set camera back to ground level
+        _camareObject.transform.position = _presetCamPos;
+        _jumpAction.performed += BindCameraWhenJump;
     }
 }
