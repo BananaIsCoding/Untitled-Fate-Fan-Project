@@ -11,12 +11,7 @@ public class CameraRestrictionScript : MonoBehaviour
     private GameObject _player;
     private Vector3 _cameraPos;
     private MovementScript _playerMovementScript;
-    private InputAction _jumpAction;
     private Coroutine _jumpCoroutine;
-    private void Start()
-    {
-        _jumpAction = InputSystem.actions.FindAction("Jump");
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -41,7 +36,7 @@ public class CameraRestrictionScript : MonoBehaviour
             }
             else
             {
-                _jumpAction.performed += BindCameraWhenJump;
+                _playerMovementScript.JumpEvent += BindCameraWhenJump;
             }
         }
     }
@@ -51,7 +46,7 @@ public class CameraRestrictionScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // and remove function link as it no longer needs to rebind each jump
-            _jumpAction.performed -= BindCameraWhenJump;
+            _playerMovementScript.JumpEvent -= BindCameraWhenJump;
             _playerMovementScript.JumpEndedEvent -= UnBindCamera;
             StopAllCoroutines();
             // set the camera back to follow player position
@@ -59,10 +54,10 @@ public class CameraRestrictionScript : MonoBehaviour
             _camareObject.transform.localPosition = _presetLocalPos;
         }
     }
-    private void BindCameraWhenJump(InputAction.CallbackContext context)
+    private void BindCameraWhenJump()
     {
         // So this can't be called muiltiple times
-        _jumpAction.performed -= BindCameraWhenJump;
+        _playerMovementScript.JumpEvent -= BindCameraWhenJump;
         _cameraPos = _presetCamPos;
         StartCoroutine(MoveCameraUp());
         // function which set camera back onto the ground
@@ -84,6 +79,6 @@ public class CameraRestrictionScript : MonoBehaviour
         StopAllCoroutines();
         // set camera back to ground level
         _camareObject.transform.position = _presetCamPos;
-        _jumpAction.performed += BindCameraWhenJump;
+        _playerMovementScript.JumpEvent += BindCameraWhenJump;
     }
 }
