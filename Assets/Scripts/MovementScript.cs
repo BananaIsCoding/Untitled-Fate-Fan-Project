@@ -2,12 +2,19 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class MovementScript : MonoBehaviour
 {
     public event Action JumpEvent;
     public event Action JumpEndedEvent;
     // variables
+    enum PlayerState
+    {
+        Stunned,
+        Unstunned,
+        Blocking,
+        Attacking
+    }
+    private PlayerState _currentState;
     private InputAction _moveAction;
     private InputAction _jumpAction;
     private float _leftRightDirection;
@@ -23,6 +30,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField] private float _playerMaxSpeed = 1000f;
     void Start()
     {
+        _currentState = PlayerState.Unstunned;
         // set up by getting required things and linking procedures/functions to certain input
         _jumpAction = InputSystem.actions.FindAction("Jump");
         _moveAction = InputSystem.actions.FindAction("Move");
@@ -57,9 +65,14 @@ public class MovementScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        // move character
-        float speed = _playerSpeed > _playerMaxSpeed ? _playerMaxSpeed : _playerSpeed;
-        _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime), _rigidbody.linearVelocity.y);
+        switch (_currentState)
+        {
+            case PlayerState.Unstunned:
+                // move character
+                float speed = _playerSpeed > _playerMaxSpeed ? _playerMaxSpeed : _playerSpeed;
+                _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime), _rigidbody.linearVelocity.y);
+            break;
+        }
     }
     private void Jump(InputAction.CallbackContext context)
     {
@@ -70,6 +83,7 @@ public class MovementScript : MonoBehaviour
             _charAnimator.Play("NeroPrepJump");
             _jumpAction.performed -= Jump;
             _jumped = true;
+            _currentState = PlayerState.Stunned;
             StartCoroutine(DelayedJump());
         }
         else if (!_doubleJumped) 
@@ -79,10 +93,11 @@ public class MovementScript : MonoBehaviour
             _rigidbody.linearVelocityY = _jumpPower;
         }
     }
-    IEnumerator DelayedJump()
+    private IEnumerator DelayedJump()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.3f);
         JumpEvent?.Invoke();
+        _currentState = PlayerState.Unstunned;
         _rigidbody.linearVelocityY = _jumpPower;
         _jumpAction.performed += Jump;
     }
