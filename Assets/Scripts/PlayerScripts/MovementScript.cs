@@ -52,7 +52,10 @@ public class MovementScript : MonoBehaviour
             // get direction
             _leftRightDirection = _moveAction.ReadValue<Vector2>().x;
             // call event so that if attack then it will be in right direction
-            SwitchDirectionEvent?.Invoke(_leftRightDirection);
+            if (_leftRightDirection != 0)
+            {
+                SwitchDirectionEvent?.Invoke(_leftRightDirection);
+            }
             // based on the direction it will flip the character
             switch (_leftRightDirection)
             {

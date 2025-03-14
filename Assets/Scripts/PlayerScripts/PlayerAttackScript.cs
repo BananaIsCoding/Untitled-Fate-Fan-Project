@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttackScript : MonoBehaviour
 {
-    public event Action<float> OnPlayerAttack;
+    public event Action<float, float, float> OnPlayerAttack;
     private bool _jumping;
     private bool _moveAttacking;
     private Coroutine _attackCoroutine;
     private MovementScript _movementScript;
-    private float _direction;
+    private float _direction = 1.0f;
+    private float _knockbackStrength = 5.0f;
     [SerializeField] private GameObject _hitbox;
     private PlayerHitBoxScript _hitboxScript;
     private void Start()
@@ -35,6 +36,7 @@ public class PlayerAttackScript : MonoBehaviour
     }
     private IEnumerator PerformAttack()
     {
+        _knockbackStrength = 1.0f;
         // make hitbox
         if (_jumping)
         {
@@ -66,7 +68,7 @@ public class PlayerAttackScript : MonoBehaviour
             }
         }
         _movementScript.enabled = false;
-        OnPlayerAttack.Invoke(.5f);
+        OnPlayerAttack.Invoke(.5f, _direction, _knockbackStrength);
     } 
     private void EndTheAttack()
     {

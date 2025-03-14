@@ -6,6 +6,8 @@ public class PlayerHitBoxScript : MonoBehaviour
     public event Action EndAttackEvent;
     private Collider2D _hitboxCollider;
     private Coroutine _lifetimeCoroutine;
+    private float _direction;
+    private float _knockbackStrength = 1.0f;
     [SerializeField] private PlayerAttackScript _attackScript;
     private void Start()
     {
@@ -16,16 +18,17 @@ public class PlayerHitBoxScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            StopCoroutine(_lifetimeCoroutine);
             _hitboxCollider.enabled = false;
-            EndAttackEvent?.Invoke();
             gameObject.transform.localPosition = new Vector3(0.0f, -10.0f, 0.0f);
+            collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2 (_direction * _knockbackStrength, 1 * _knockbackStrength);
         }
     }
-    private void EnableHitBox(float lifetime)
+    private void EnableHitBox(float lifetime, float direction, float knockbackStrength)
     {
+        _direction = direction;
+        _knockbackStrength = knockbackStrength;
         _hitboxCollider.enabled = true;
-        _lifetimeCoroutine = StartCoroutine(LifeTimeBeforeDisable(lifetime));
+        StartCoroutine(LifeTimeBeforeDisable(lifetime));
     }
     private IEnumerator LifeTimeBeforeDisable(float lifetime)
     {
