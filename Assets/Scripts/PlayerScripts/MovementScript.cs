@@ -6,24 +6,23 @@ public class MovementScript : MonoBehaviour
 {
     public event Action JumpEvent;
     public event Action JumpEndedEvent;
-    public event Action<float> SwitchDirectionEvent;
     // variables
     enum PlayerState
     {
-        Stunned,
+        MovementLocked,
         Unstunned,
         Blocking
     }
     private PlayerState _currentState;
     private InputAction _moveAction;
     private InputAction _jumpAction;
+    private InputAction _crouchAction;
     private float _leftRightDirection;
     private Rigidbody2D _rigidbody;
     private Animator _charAnimator;
     private SpriteRenderer _charSpriteRenderer;
     private bool _jumped;
     private bool _doubleJumped;
-    private bool _facingRight;
     private bool _setUpComplete;
     [SerializeField] private float _jumpPower = 10;
     [Header("Movement parameters")]
@@ -35,12 +34,15 @@ public class MovementScript : MonoBehaviour
         // set up by getting required things and linking procedures/functions to certain input
         _jumpAction = InputSystem.actions.FindAction("Jump");
         _moveAction = InputSystem.actions.FindAction("Move");
+        _crouchAction = InputSystem.actions.FindAction("Crouch");
         _rigidbody = GetComponent<Rigidbody2D>();
         _charAnimator = GetComponent<Animator>();
         _charSpriteRenderer = GetComponent<SpriteRenderer>();
         _moveAction.performed += Move;
         _moveAction.canceled += StopMovement;
         _jumpAction.performed += Jump;
+        _crouchAction.started += TurnOnCrouch;
+        _crouchAction.canceled += TurnOffCrouch;
         _setUpComplete = true;
     }
     // gets the which direction player wants to move in
@@ -51,23 +53,16 @@ public class MovementScript : MonoBehaviour
         {
             // get direction
             _leftRightDirection = _moveAction.ReadValue<Vector2>().x;
-            // call event so that if attack then it will be in right direction
-            if (_leftRightDirection != 0)
-            {
-                SwitchDirectionEvent?.Invoke(_leftRightDirection);
-            }
             // based on the direction it will flip the character
             switch (_leftRightDirection)
             {
                 case 0:
                     break;
                 case -1:
-                    _facingRight = false;
                     _charSpriteRenderer.flipX = true;
                     _charAnimator.SetFloat("Speed", 1);
                     break;
                 case 1:
-                    _facingRight = true;
                     _charSpriteRenderer.flipX = false;
                     _charAnimator.SetFloat("Speed", 1);
                     break;
@@ -103,7 +98,7 @@ public class MovementScript : MonoBehaviour
                 _charAnimator.Play("NeroPrepJump");
                 _jumpAction.performed -= Jump;
                 _jumped = true;
-                _currentState = PlayerState.Stunned;
+                _currentState = PlayerState.MovementLocked;
                 StartCoroutine(DelayedJump());
             }
             else if (!_doubleJumped)
@@ -132,6 +127,18 @@ public class MovementScript : MonoBehaviour
             _charAnimator.SetBool("Jumping", false);
             JumpEndedEvent?.Invoke();
         }
+    }
+    #endregion
+    #region Crouch Related
+    private void TurnOnCrouch(InputAction.CallbackContext context)
+    {
+        // [NOTE] play crouching anim
+        _currentState = PlayerState.MovementLocked;
+    }
+    private void TurnOffCrouch(InputAction.CallbackContext context)
+    {
+        // play uncrouching anim
+        _currentState = PlayerState.MovementLocked;
     }
     #endregion
     #region Disabling And Re-enabling Movement
