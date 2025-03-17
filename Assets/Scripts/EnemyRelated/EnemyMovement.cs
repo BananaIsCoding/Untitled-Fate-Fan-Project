@@ -37,7 +37,7 @@ public class EnemyMovement : MonoBehaviour
                     _enemyRigidBody.linearVelocityX = -2.0f;
                 }
                 // randomly generate chance to jump 
-                if (Random.Range(1,25) == 1)
+                if (Random.Range(1,720) == 1)
                 {
                     _currentState = EnemyStates.jumping;
                 }
@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
             // break;
         }
     }
-    private void SetAttackMode()
+    private void SetAttackMode(float dir)
     {
         _currentState = EnemyStates.attacking;
     }

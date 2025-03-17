@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class EnemyHitboxDetectScript : MonoBehaviour
 {
-    public event Action CollisionEvent;
+    [SerializeField] private float _direction;
+    public event Action<float> CollisionEvent;
     public event Action CollisionEndedEvent;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            CollisionEvent?.Invoke();
+            CollisionEvent?.Invoke(_direction);
         }
     }
     void OnTriggerExit2D(Collider2D collision)

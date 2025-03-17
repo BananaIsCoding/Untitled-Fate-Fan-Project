@@ -7,9 +7,9 @@ public class PlayerHitBoxScript : MonoBehaviour
     public event Action EndAttackEvent;
     private Collider2D _hitboxCollider;
     private Coroutine _lifetimeCoroutine;
-    private float _direction;
-    private float _knockbackStrength = 1.0f;
     private EnemyMovement _enemyMovementScript;
+    private float _direction;
+    [SerializeField] private float _knockbackStrength = 1.0f;
     [SerializeField] private PlayerAttackScript _attackScript;
     [SerializeField] private float _stunTime = 1.0f;
     private void Start()

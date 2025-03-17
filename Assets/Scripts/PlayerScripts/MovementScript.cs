@@ -82,6 +82,7 @@ public class MovementScript : MonoBehaviour
         {
             // move character
             float speed = _playerSpeed > _playerMaxSpeed ? _playerMaxSpeed : _playerSpeed;
+            Debug.Log("Hello");
             _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime), _rigidbody.linearVelocity.y);
         }    
     }
@@ -147,7 +148,6 @@ public class MovementScript : MonoBehaviour
     {
         if (_setUpComplete)
         {
-            Debug.Log("Hi");
             _moveAction.performed += Move;
             _moveAction.canceled += StopMovement;
             _jumpAction.performed += Jump;
@@ -162,7 +162,6 @@ public class MovementScript : MonoBehaviour
         _charAnimator.SetFloat("Speed", 0.0f);
         if (_rigidbody.linearVelocity.y > -0.5f && _rigidbody.linearVelocity.y < 0.5f)
         {
-            Debug.Log(_rigidbody.linearVelocity.y);
             _rigidbody.linearVelocity = Vector3.zero;
         }
     }

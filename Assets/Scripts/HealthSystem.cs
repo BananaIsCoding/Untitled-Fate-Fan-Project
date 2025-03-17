@@ -8,9 +8,9 @@ public class HealthSystem : MonoBehaviour
     // variables
     public UnityEvent<float> DamageTakenEvent;
     public event Action DeadEvent;
+    public Slider _healthSlider;
     private float _health;
     [SerializeField] private float _maxHealth = 100;
-    [SerializeField] private Slider _healthSlider;
     void Start()
     {
         _health = _maxHealth;

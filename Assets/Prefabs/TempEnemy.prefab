@@ -147,6 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013c4d93dbca8a546ab3b0781499e005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 5
+  _direction: 1
+  _stunTime: 0.5
+  _knockbackStrength: 1
 --- !u!1 &4388690868772838714
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +165,7 @@ GameObject:
   - component: {fileID: 7874224619203763006}
   - component: {fileID: 1025926812580625037}
   - component: {fileID: 3114672168597511773}
+  - component: {fileID: 9143487435446130095}
   m_Layer: 0
   m_Name: TempEnemy
   m_TagString: Enemy
@@ -340,8 +345,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftAttackRange: {fileID: 8233662276984602503}
   _attackCooldown: 6
+  _damage: 6
   _hitbox: {fileID: 2201077569478893942}
   _hitboxScript: {fileID: 6886264068474214161}
+--- !u!114 &9143487435446130095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4388690868772838714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d51dc52651c97a409f900e301a9cfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageTakenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _healthSlider: {fileID: 0}
+  _maxHealth: 15
 --- !u!1 &4735571022663373258
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,3 +512,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09de1a65f1108254697d69fb4e0499a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _direction: 1
