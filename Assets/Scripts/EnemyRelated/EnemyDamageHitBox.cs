@@ -13,6 +13,7 @@ public class EnemyDamageHitBox : MonoBehaviour
     private HealthSystem _playerHealthSystem;
     private MovementScript _playerMovementScript;
     private Rigidbody2D _playerRigidbody;
+    private Animator _playerAnimator;
     private Coroutine _stunCoroutine;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,11 +27,12 @@ public class EnemyDamageHitBox : MonoBehaviour
                 _playerHealthSystem = thePlayer.GetComponent<HealthSystem>();
                 _playerMovementScript = thePlayer.GetComponent<MovementScript>();
                 _playerRigidbody = thePlayer.GetComponent<Rigidbody2D>();
+                _playerAnimator = thePlayer.GetComponent<Animator>();
             }
             _playerMovementScript.enabled = false;
             _playerRigidbody.linearVelocity = new Vector2(_direction * _knockbackStrength, 1.5f * _knockbackStrength);
-            Debug.Log(_direction * _knockbackStrength);
             _playerHealthSystem.DamageTakenEvent.Invoke(_damage);
+            _playerAnimator.Play("TakeDamage");
             AttackEvent?.Invoke();
             if (_stunCoroutine != null)
             {
@@ -43,5 +45,6 @@ public class EnemyDamageHitBox : MonoBehaviour
     {
         yield return new WaitForSeconds(_stunTime);
         _playerMovementScript.enabled = true;
+        _stunCoroutine = null;
     }
 }

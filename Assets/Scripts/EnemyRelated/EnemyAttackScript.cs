@@ -9,6 +9,7 @@ public class EnemyAttackScript : MonoBehaviour
     private float _waitBeforeActualAttack = 3.0f;
     private float _direction = 1.0f;
     [SerializeField] private EnemyHitboxDetectScript _leftAttackRange;
+    [SerializeField] private EnemyHitboxDetectScript _rightAttackRange;
     [SerializeField] private float _attackCooldown = 6.0f;
     [SerializeField] private float _damage = 6.0f;
     [SerializeField] private GameObject _hitbox;
@@ -18,6 +19,8 @@ public class EnemyAttackScript : MonoBehaviour
     {
         _leftAttackRange.CollisionEvent += WithinRangeCall;
         _leftAttackRange.CollisionEndedEvent += OutOfRange;
+        _rightAttackRange.CollisionEvent += WithinRangeCall;
+        _rightAttackRange.CollisionEndedEvent += OutOfRange;
         _hitboxScript.AttackEvent += EndAttack;
         _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
         _hitboxCollider = _hitbox.GetComponent<Collider2D>();

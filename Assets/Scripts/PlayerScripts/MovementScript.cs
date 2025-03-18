@@ -82,7 +82,6 @@ public class MovementScript : MonoBehaviour
         {
             // move character
             float speed = _playerSpeed > _playerMaxSpeed ? _playerMaxSpeed : _playerSpeed;
-            Debug.Log("Hello");
             _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime), _rigidbody.linearVelocity.y);
         }    
     }

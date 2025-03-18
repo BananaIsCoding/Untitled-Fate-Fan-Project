@@ -1,17 +1,20 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 public class PlayerHitBoxScript : MonoBehaviour
 {
     //variable
     public event Action EndAttackEvent;
+    public float _damage = 5.0f;
     private Collider2D _hitboxCollider;
-    private Coroutine _lifetimeCoroutine;
+    private Coroutine _stunCoroutine;
     private EnemyMovement _enemyMovementScript;
     private float _direction;
     [SerializeField] private float _knockbackStrength = 1.0f;
     [SerializeField] private PlayerAttackScript _attackScript;
     [SerializeField] private float _stunTime = 1.0f;
+    [SerializeField] private TextMeshProUGUI _enemyNameDisplayer;
     private void Start()
     {
         _attackScript.OnPlayerAttack += EnableHitBox;
@@ -25,20 +28,34 @@ public class PlayerHitBoxScript : MonoBehaviour
             _hitboxCollider.enabled = false;
             // move it out of the vicinity
             gameObject.transform.localPosition = new Vector3(0.0f, -10.0f, 0.0f);
-            // get and cancel enemy's movement
-            _enemyMovementScript = collision.GetComponent<EnemyMovement>();
-            _enemyMovementScript.enabled = false;
+            _enemyNameDisplayer.text = collision.gameObject.name;
+            collision.gameObject.GetComponent<HealthSystem>().DamageTakenEvent.Invoke(_damage);
             // apply knockback to the enemy
             collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2 (_direction * _knockbackStrength, 1 * _knockbackStrength);
-            // re-enable enemy movement after X Sec
-            StartCoroutine(EnemyStunOff());
+            // get and cancel enemy's movement
+            _enemyMovementScript = collision.gameObject.GetComponent<EnemyMovement>();
+            if (_enemyMovementScript != null)
+            {
+                _enemyMovementScript.enabled = false;
+                if (_stunCoroutine != null)
+                {
+                    StopCoroutine(_stunCoroutine);
+                    
+                }
+                // re-enable enemy movement after X Sec
+                _stunCoroutine = StartCoroutine(EnemyStunOff());
+            }
         }
     }
     private IEnumerator EnemyStunOff()
     {
         yield return new WaitForSeconds(_stunTime);
         // re-enable enemy movement
-        _enemyMovementScript.enabled = true;
+        if (_enemyMovementScript != null)
+        {
+            _enemyMovementScript.enabled = true;
+        }
+        _stunCoroutine = null;
     }
     private void EnableHitBox(float lifetime, float direction, float knockbackStrength)
     {

@@ -20,7 +20,7 @@ public class HealthSystem : MonoBehaviour
     {
         _health -= dmg;
         // to not over kill it
-        if (_health < 0)
+        if (_health <= 0)
         {
             _health = 0;
             DeadEvent?.Invoke();

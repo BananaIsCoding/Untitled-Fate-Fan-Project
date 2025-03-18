@@ -11,7 +11,6 @@ public class CameraRestrictionScript : MonoBehaviour
     private GameObject _player;
     private Vector3 _cameraPos;
     private MovementScript _playerMovementScript;
-    private Coroutine _jumpCoroutine;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

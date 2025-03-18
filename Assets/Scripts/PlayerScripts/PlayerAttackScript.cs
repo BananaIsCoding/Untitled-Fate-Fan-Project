@@ -10,14 +10,19 @@ public class PlayerAttackScript : MonoBehaviour
     private bool _jumping;
     private bool _moveAttacking;
     private bool _crouching;
+    private bool _attackStarted;
     private Coroutine _attackCoroutine;
     private MovementScript _movementScript;
     private float _direction = 1.0f;
     private float _knockbackStrength = 5.0f;
-    [SerializeField] private GameObject _hitbox;
-    private PlayerHitBoxScript _hitboxScript;
     private InputAction _moveAction;
     private InputAction _crouchAction;
+    private PlayerHitBoxScript _hitboxScript;
+    private Animator _playerAnimator;
+    private Rigidbody2D _playerRigidBody;
+    [SerializeField] private GameObject _hitbox;
+    [SerializeField] private float _damage;
+    [SerializeField] private float _attackCooldown = 0.8f;
     #endregion
     private void Start()
     {
@@ -25,27 +30,29 @@ public class PlayerAttackScript : MonoBehaviour
         _crouchAction = InputSystem.actions.FindAction("Crouch");
         InputSystem.actions.FindAction("Jump").started += Jumped;
         InputSystem.actions.FindAction("Attack").performed += DefaultAttack;
-        InputSystem.actions.FindAction("MoveAttack").performed += MoveAttack;
         _moveAction.started += GetDirection;
         _crouchAction.started += TurnOnCrouch;
         _crouchAction.canceled += TurnOffCrouch;
         _movementScript = GetComponent<MovementScript>();
+        _playerAnimator = GetComponent<Animator>();
+        _playerRigidBody = GetComponent<Rigidbody2D>();
         _hitboxScript = _hitbox.GetComponent<PlayerHitBoxScript>();
         _hitboxScript.EndAttackEvent += EndTheAttack;
     }
     #region Attack conditions
     private void DefaultAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("Gonna Attack!");
-        _attackCoroutine ??= StartCoroutine(PerformAttack());
-    }
-    private void MoveAttack(InputAction.CallbackContext context)
-    {
-        _moveAttacking = true;
+        if (!_attackStarted)
+        {
+            _attackCoroutine ??= StartCoroutine(PerformAttack());   
+        }
     }
     private void Jumped(InputAction.CallbackContext context)
     {
-        _jumping = true;
+        if (!_attackStarted)
+        {
+            _jumping = true;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -80,45 +87,55 @@ public class PlayerAttackScript : MonoBehaviour
         // make hitbox
         if (_jumping)
         {
+            _attackStarted = true;
             Debug.Log("Jump Attack!");
             // Play Animation
+            _playerAnimator.Play("NeroAirKick");
             // Place hitbox a bit infront of the player 
-            _hitbox.transform.localPosition = new Vector3(0.25f * _direction, -0.75f, 0);
-            _hitbox.transform.localScale = new Vector3(1.5f, 0.75f, 1.0f);
+            _hitbox.transform.localPosition = new Vector3(0.50f * _direction, -0.75f, 0);
+            _hitbox.transform.localScale = new Vector3(1.75f, 0.75f, 1.0f);
         }
-        else
+        else 
         {
             yield return new WaitForSeconds(.1f);
+            _attackStarted = true;
             if (_crouching)
             {
                 Debug.Log("Crouch Attack!");
             }
-            else if (_moveAttacking) 
+            else if (_moveAction.ReadValue<Vector2>().x != 0) 
             {
                 Debug.Log("Move Attack!");
-                // Play the animation
-                // Place hitbox a bit infront of the player
-                _hitbox.transform.localPosition = new Vector3(0.8f * _direction, 0.1f, 0.0f);
-                _hitbox.transform.localScale = new Vector3(1.75f, 1.0f, 1.0f);
-                // Move the player
+                // Play Animation
+                _playerAnimator.Play("MiddleJabAttack");
+                yield return new WaitForSeconds(.4f);
+                // Place hitbox a bit infront of the player 
+                _hitbox.transform.localPosition = new Vector3(1.55f * _direction, 0.45f, 0.0f);
+                _hitbox.transform.localScale = new Vector3( 3.0f, 1.0f, 1.0f);
             }
             else
             {
                 Debug.Log("Attack!");
-                // Play Animation
-                // Place hitbox a bit infront of the player 
-                _hitbox.transform.localPosition = new Vector3(0.8f * _direction, 0.1f, 0.0f);
-                _hitbox.transform.localScale = new Vector3( 2.25f, 1.0f, 1.0f);
+                // Play the animation
+                _playerAnimator.Play("NeroBasicAttack");
+                // Place hitbox a bit infront of the player
+                _hitbox.transform.localPosition = new Vector3(0.9f * _direction, -0.35f, 0.0f);
+                _hitbox.transform.localScale = new Vector3(1.5f, 1.25f, 1.0f);
             }
         }
         _movementScript.enabled = false;
         OnPlayerAttack.Invoke(.5f, _direction, _knockbackStrength);
+        StartCoroutine(AttackCooldown());
     } 
     private void EndTheAttack()
     {
-        _moveAttacking = false;
         _attackCoroutine = null;
         _movementScript.enabled = true;
+    }
+    private IEnumerator AttackCooldown()
+    {
+        yield return new WaitForSeconds(_attackCooldown);
+        _attackStarted = false;
     }
     #endregion
 }

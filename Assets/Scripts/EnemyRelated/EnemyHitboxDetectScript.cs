@@ -8,14 +8,14 @@ public class EnemyHitboxDetectScript : MonoBehaviour
     public event Action CollisionEndedEvent;
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
             CollisionEvent?.Invoke(_direction);
         }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
         {
             CollisionEndedEvent?.Invoke();
         }

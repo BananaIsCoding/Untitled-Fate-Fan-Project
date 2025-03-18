@@ -1,25 +1,31 @@
+
 using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     // variables
     private GameObject _player;
     private Rigidbody2D _enemyRigidBody;
+    private float _direction = 1.0f;
     private enum EnemyStates
     {
         moving,
         jumping,
         inAir,
-        attacking
+        stopped
     }
     private EnemyStates _currentState = EnemyStates.inAir;
     [SerializeField] private EnemyHitboxDetectScript _rightAttackRangeScript;
+    [SerializeField] private EnemyHitboxDetectScript _leftAttackRangeScript;
+    [SerializeField] private float _enemySpeedMultipier = 1.0f;
     void Start()
     {
         // set ups
         _player = transform.parent.GetComponent<EnemySpawnerScript>()._player;
         _enemyRigidBody = GetComponent<Rigidbody2D>();
-        _rightAttackRangeScript.CollisionEvent += SetAttackMode;
+        _rightAttackRangeScript.CollisionEvent += StopEnemy;
+        _leftAttackRangeScript.CollisionEvent += StopEnemy;
         _rightAttackRangeScript.CollisionEndedEvent += SetBackToMovingMode;
+        _leftAttackRangeScript.CollisionEndedEvent += SetBackToMovingMode;
     }
     private void Update()
     {
@@ -30,11 +36,13 @@ public class EnemyMovement : MonoBehaviour
                 // gets player direction
                 if (_player.transform.position.x > transform.position.x)
                 {
-                    _enemyRigidBody.linearVelocityX = 2.0f;
+                    _enemyRigidBody.linearVelocityX = 2.0f * _enemySpeedMultipier;
+                    _direction = 1.0f;
                 }
                 else
                 {
-                    _enemyRigidBody.linearVelocityX = -2.0f;
+                    _enemyRigidBody.linearVelocityX = -2.0f * _enemySpeedMultipier;
+                    _direction = -1.0f;
                 }
                 // randomly generate chance to jump 
                 if (Random.Range(1,720) == 1)
@@ -46,10 +54,12 @@ public class EnemyMovement : MonoBehaviour
                 if (_player.transform.position.x > transform.position.x)
                 {
                     _enemyRigidBody.linearVelocity = new Vector2 ( 2.0f, 10.0f);
+                    _direction = 1.0f;
                 }
                 else
                 {
                     _enemyRigidBody.linearVelocity = new Vector2(- 2.0f, 10.0f);
+                    _direction = -1.0f;
                 }
                 _currentState = EnemyStates.inAir;
                 break;
@@ -57,9 +67,12 @@ public class EnemyMovement : MonoBehaviour
             // break;
         }
     }
-    private void SetAttackMode(float dir)
+    private void StopEnemy(float dir)
     {
-        _currentState = EnemyStates.attacking;
+        if (dir == _direction)
+        {
+            _currentState = EnemyStates.stopped;
+        }
     }
     private void SetBackToMovingMode()
     {
@@ -70,7 +83,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            if (_currentState != EnemyStates.attacking)
+            if (_currentState != EnemyStates.stopped)
             {
                 _currentState = EnemyStates.moving;
             }
