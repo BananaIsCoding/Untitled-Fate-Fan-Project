@@ -23,6 +23,7 @@ public class PlayerAttackScript : MonoBehaviour
     private Animator _playerAnimator;
     private Rigidbody2D _playerRigidBody;
     private string _attackCombo;
+    private SpriteRenderer _spriteRenderer;
     [SerializeField] private float _originalYAxis = 2.904933f; 
     [SerializeField] private GameObject _hitbox;
     [SerializeField] private GameObject _rangeSlice;
@@ -41,6 +42,7 @@ public class PlayerAttackScript : MonoBehaviour
         _movementScript = GetComponent<MovementScript>();
         _playerAnimator = GetComponent<Animator>();
         _playerRigidBody = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _hitboxScript = _hitbox.GetComponent<PlayerHitBoxScript>();
         _rangedSliceScript = _rangeSlice.GetComponent<PlayerRangedSliceScript>();
         _hitboxScript.EndAttackEvent += EndTheAttack;
@@ -113,26 +115,39 @@ public class PlayerAttackScript : MonoBehaviour
         }
         else 
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
             _attackSetUpStage = false;
             switch (_attackCombo)
             {
                 case "Z268":
                     Debug.Log("Right Ranged Attack!");
+                    _spriteRenderer.flipX = false;
+                    _playerAnimator.Play("360TurnSlash");
+                    yield return new WaitForSeconds(.38f);
                     _hitbox.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
                     _rangeSlice.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-                    _rangedSliceScript.StartAttack?.Invoke(3.0f, 1.0f, 1.0f);
+                    _rangedSliceScript.StartAttack?.Invoke(2.5f, 1.0f, 1.0f);
                     break;
                 case "Z248":
                     Debug.Log("Left Ranged Attack!");
+                    _spriteRenderer.flipX = true;
+                    _playerAnimator.Play("360TurnSlash");
+                    yield return new WaitForSeconds(.38f);
                     _hitbox.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
-                    _rangeSlice.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-                    _rangedSliceScript.StartAttack?.Invoke(3.0f, 1.0f, -1.0f);
+                    _rangeSlice.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
+                    _rangedSliceScript.StartAttack?.Invoke(2.5f, 1.0f, -1.0f);
                     break;
                 case "ZZ8":
                     Debug.Log("Up special Attack!");
+                    _playerAnimator.Play("NeroFlipAttack");
+                    yield return new WaitForSeconds(.35f);
+                    _playerRigidBody.linearVelocity = new Vector2(5 * _direction,15);
+                    _playerRigidBody.gravityScale *= 1.75f;
+                    yield return new WaitForSeconds(.75f);
+                    _hitbox.transform.localPosition = new Vector3(_direction, -0.25f, 0.0f);
+                    _hitbox.transform.localScale = new Vector3(2.0f, 1.75f, 1.0f);
                     break;
                 case "Z22":
                     Debug.Log("Downslam Attack!");
@@ -183,6 +198,7 @@ public class PlayerAttackScript : MonoBehaviour
     {
         _attackCoroutine = null;
         _movementScript.enabled = true;
+        _playerRigidBody.gravityScale = 2;
     }
     private IEnumerator AttackCooldown()
     {

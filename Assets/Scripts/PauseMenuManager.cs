@@ -24,6 +24,7 @@ public class PauseMenuManager : MonoBehaviour
     }*/
     public void BackToMainMenuButton()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(1, LoadSceneMode.Additive);
         // 0 should be main menu
         SceneManager.LoadSceneAsync(0);

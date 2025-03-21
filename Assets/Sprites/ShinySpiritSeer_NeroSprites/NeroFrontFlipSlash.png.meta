@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 495f8d155edcfaf4db0e80899fb42a53
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6874329808773707915
+    second: NeroFrontFlipSlash_0
+  - first:
+      213: -2063046967945168095
+    second: NeroFrontFlipSlash_1
+  - first:
+      213: 5494107325921589680
+    second: NeroFrontFlipSlash_2
+  - first:
+      213: -386814537147360271
+    second: NeroFrontFlipSlash_3
+  - first:
+      213: -2283203582805892418
+    second: NeroFrontFlipSlash_4
+  - first:
+      213: 9003035685550086586
+    second: NeroFrontFlipSlash_5
+  - first:
+      213: -746506217233714972
+    second: NeroFrontFlipSlash_6
+  - first:
+      213: -8662774578059011929
+    second: NeroFrontFlipSlash_7
+  - first:
+      213: -5971583255889162223
+    second: NeroFrontFlipSlash_8
+  - first:
+      213: 2478903828498221625
+    second: NeroFrontFlipSlash_9
+  - first:
+      213: 8319427840743302386
+    second: NeroFrontFlipSlash_10
+  - first:
+      213: 2317551396125009778
+    second: NeroFrontFlipSlash_11
+  - first:
+      213: -275403437768745179
+    second: NeroFrontFlipSlash_12
+  - first:
+      213: -7870137669262557255
+    second: NeroFrontFlipSlash_13
+  - first:
+      213: 4736799804855616485
+    second: NeroFrontFlipSlash_14
+  - first:
+      213: 3095364928543797509
+    second: NeroFrontFlipSlash_15
+  - first:
+      213: 1584001570078692640
+    second: NeroFrontFlipSlash_16
+  - first:
+      213: 3369434042817560929
+    second: NeroFrontFlipSlash_17
+  - first:
+      213: -2984046106615844783
+    second: NeroFrontFlipSlash_18
+  - first:
+      213: -4535169745448831443
+    second: NeroFrontFlipSlash_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b88f5d01a86866f50800000000000000
+      internalID: 6874329808773707915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b7ea096b59e53e0800000000000000
+      internalID: -2063046967945168095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b97d6ff08dfe3c40800000000000000
+      internalID: 5494107325921589680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fbdf575a32c1aaf0800000000000000
+      internalID: -386814537147360271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2a4f8307e6050e0800000000000000
+      internalID: -2283203582805892418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9d061814531fc70800000000000000
+      internalID: 9003035685550086586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e0f923fc80e3a5f0800000000000000
+      internalID: -746506217233714972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a812892b64a7c780800000000000000
+      internalID: -8662774578059011929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1105e06eaaca02da0800000000000000
+      internalID: -5971583255889162223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_9
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a0ef1f5e5d66220800000000000000
+      internalID: 2478903828498221625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_10
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f4effdfa8b847370800000000000000
+      internalID: 8319427840743302386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_11
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277edb247b8992020800000000000000
+      internalID: 2317551396125009778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f5fd158029d2cf0800000000000000
+      internalID: -275403437768745179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf3f22dc77a7c290800000000000000
+      internalID: -7870137669262557255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e30f8c635e7cb140800000000000000
+      internalID: 4736799804855616485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5013e08a002f4fa20800000000000000
+      internalID: 3095364928543797509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_16
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025933c19018bf510800000000000000
+      internalID: 1584001570078692640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_17
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161cf30f862a2ce20800000000000000
+      internalID: 3369434042817560929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15076cd40e98696d0800000000000000
+      internalID: -2984046106615844783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroFrontFlipSlash_19
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d267c661527df01c0800000000000000
+      internalID: -4535169745448831443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8fce3738c64dbaa4eaf8f78d009c66d3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NeroFrontFlipSlash_0: 6874329808773707915
+      NeroFrontFlipSlash_1: -2063046967945168095
+      NeroFrontFlipSlash_10: 8319427840743302386
+      NeroFrontFlipSlash_11: 2317551396125009778
+      NeroFrontFlipSlash_12: -275403437768745179
+      NeroFrontFlipSlash_13: -7870137669262557255
+      NeroFrontFlipSlash_14: 4736799804855616485
+      NeroFrontFlipSlash_15: 3095364928543797509
+      NeroFrontFlipSlash_16: 1584001570078692640
+      NeroFrontFlipSlash_17: 3369434042817560929
+      NeroFrontFlipSlash_18: -2984046106615844783
+      NeroFrontFlipSlash_19: -4535169745448831443
+      NeroFrontFlipSlash_2: 5494107325921589680
+      NeroFrontFlipSlash_3: -386814537147360271
+      NeroFrontFlipSlash_4: -2283203582805892418
+      NeroFrontFlipSlash_5: 9003035685550086586
+      NeroFrontFlipSlash_6: -746506217233714972
+      NeroFrontFlipSlash_7: -8662774578059011929
+      NeroFrontFlipSlash_8: -5971583255889162223
+      NeroFrontFlipSlash_9: 2478903828498221625
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
