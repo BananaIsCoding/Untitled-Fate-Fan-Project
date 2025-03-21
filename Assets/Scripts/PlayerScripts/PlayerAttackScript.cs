@@ -10,7 +10,8 @@ public class PlayerAttackScript : MonoBehaviour
     private bool _jumping;
     private bool _moveAttacking;
     private bool _crouching;
-    private bool _attackStarted;
+    private bool _attackSetUpStage;
+    private bool _cooldownOn;
     private Coroutine _attackCoroutine;
     private MovementScript _movementScript;
     private float _direction = 1.0f;
@@ -18,9 +19,13 @@ public class PlayerAttackScript : MonoBehaviour
     private InputAction _moveAction;
     private InputAction _crouchAction;
     private PlayerHitBoxScript _hitboxScript;
+    private PlayerRangedSliceScript _rangedSliceScript;
     private Animator _playerAnimator;
     private Rigidbody2D _playerRigidBody;
+    private string _attackCombo;
+    [SerializeField] private float _originalYAxis = 2.904933f; 
     [SerializeField] private GameObject _hitbox;
+    [SerializeField] private GameObject _rangeSlice;
     [SerializeField] private float _damage;
     [SerializeField] private float _attackCooldown = 0.8f;
     #endregion
@@ -37,29 +42,30 @@ public class PlayerAttackScript : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _hitboxScript = _hitbox.GetComponent<PlayerHitBoxScript>();
+        _rangedSliceScript = _rangeSlice.GetComponent<PlayerRangedSliceScript>();
         _hitboxScript.EndAttackEvent += EndTheAttack;
     }
     #region Attack conditions
     private void DefaultAttack(InputAction.CallbackContext context)
     {
-        if (!_attackStarted)
+        if (!_cooldownOn)
         {
-            _attackCoroutine ??= StartCoroutine(PerformAttack());   
+            if (!_attackSetUpStage)
+            {
+                _attackSetUpStage = true;
+                _attackCombo = "Z";
+            }
+            else
+            {
+                _attackCombo += "Z";
+            }
+            _attackCoroutine ??= StartCoroutine(PerformAttack());
         }
     }
     private void Jumped(InputAction.CallbackContext context)
     {
-        if (!_attackStarted)
-        {
-            _jumping = true;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            _jumping = false;
-        }
+        _jumping = true;
+        _attackCombo += "8";
     }
     private void GetDirection(InputAction.CallbackContext context)
     {
@@ -68,11 +74,21 @@ public class PlayerAttackScript : MonoBehaviour
         {
             _direction = _moveAction.ReadValue<Vector2>().x;
         }
+        switch (_direction)
+        {
+            case -1.0f:
+                _attackCombo += "4";
+                break;
+            case 1.0f:
+                _attackCombo += "6";
+                break;
+        }
     }
     private void TurnOnCrouch(InputAction.CallbackContext context)
     {
         // play crouching anim
         _crouching = true;
+        _attackCombo += "2";
     }
     private void TurnOffCrouch(InputAction.CallbackContext context)
     {
@@ -83,11 +99,11 @@ public class PlayerAttackScript : MonoBehaviour
     #region Main Attack Code
     private IEnumerator PerformAttack()
     {
+        _movementScript.enabled = false;
         _knockbackStrength = 1.0f;
-        // make hitbox
-        if (_jumping)
+        if (gameObject.transform.position.y > _originalYAxis + 0.01f)
         {
-            _attackStarted = true;
+            _attackSetUpStage = false;
             Debug.Log("Jump Attack!");
             // Play Animation
             _playerAnimator.Play("NeroAirKick");
@@ -97,34 +113,70 @@ public class PlayerAttackScript : MonoBehaviour
         }
         else 
         {
-            yield return new WaitForSeconds(.1f);
-            _attackStarted = true;
-            if (_crouching)
+            yield return new WaitForSeconds(1.0f);
+            _attackSetUpStage = false;
+            switch (_attackCombo)
             {
-                Debug.Log("Crouch Attack!");
-            }
-            else if (_moveAction.ReadValue<Vector2>().x != 0) 
-            {
-                Debug.Log("Move Attack!");
-                // Play Animation
-                _playerAnimator.Play("MiddleJabAttack");
-                yield return new WaitForSeconds(.4f);
-                // Place hitbox a bit infront of the player 
-                _hitbox.transform.localPosition = new Vector3(1.55f * _direction, 0.45f, 0.0f);
-                _hitbox.transform.localScale = new Vector3( 3.0f, 1.0f, 1.0f);
-            }
-            else
-            {
-                Debug.Log("Attack!");
-                // Play the animation
-                _playerAnimator.Play("NeroBasicAttack");
-                // Place hitbox a bit infront of the player
-                _hitbox.transform.localPosition = new Vector3(0.9f * _direction, -0.35f, 0.0f);
-                _hitbox.transform.localScale = new Vector3(1.5f, 1.25f, 1.0f);
+                case "Z268":
+                    Debug.Log("Right Ranged Attack!");
+                    _hitbox.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
+                    _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+                    _rangeSlice.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
+                    _rangedSliceScript.StartAttack?.Invoke(3.0f, 1.0f, 1.0f);
+                    break;
+                case "Z248":
+                    Debug.Log("Left Ranged Attack!");
+                    _hitbox.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
+                    _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
+                    _rangeSlice.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
+                    _rangedSliceScript.StartAttack?.Invoke(3.0f, 1.0f, -1.0f);
+                    break;
+                case "ZZ8":
+                    Debug.Log("Up special Attack!");
+                    break;
+                case "Z22":
+                    Debug.Log("Downslam Attack!");
+                    // check in air
+                    break;
+                case "Z66":
+                    Debug.Log("Right Dash Attack!");
+                    break;
+                case "Z44":
+                    Debug.Log("Left Dash Attack!");
+                    break;
+                case "Z4268":
+                    Debug.Log("Right Dash Attack!");
+                    break;
+                default:
+                    /*if (_crouching)
+                    {
+                        Debug.Log("Crouch Attack!");
+                    }
+                    else */
+                    if (_moveAction.ReadValue<Vector2>().x != 0)
+                    {
+                        Debug.Log("Move Attack!");
+                        // Play Animation
+                        _playerAnimator.Play("MiddleJabAttack");
+                        yield return new WaitForSeconds(.4f);
+                        // Place hitbox a bit infront of the player 
+                        _hitbox.transform.localPosition = new Vector3(1.55f * _direction, 0.45f, 0.0f);
+                        _hitbox.transform.localScale = new Vector3(3.0f, 1.0f, 1.0f);
+                    }
+                    else
+                    {
+                        Debug.Log("Attack!");
+                        // Play the animation
+                        _playerAnimator.Play("NeroBasicAttack");
+                        // Place hitbox a bit infront of the player
+                        _hitbox.transform.localPosition = new Vector3(0.9f * _direction, -0.35f, 0.0f);
+                        _hitbox.transform.localScale = new Vector3(1.5f, 1.25f, 1.0f);
+                    }
+                    break;
             }
         }
-        _movementScript.enabled = false;
-        OnPlayerAttack.Invoke(.5f, _direction, _knockbackStrength);
+        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength);
+        Debug.Log(_attackCombo);
         StartCoroutine(AttackCooldown());
     } 
     private void EndTheAttack()
@@ -134,8 +186,9 @@ public class PlayerAttackScript : MonoBehaviour
     }
     private IEnumerator AttackCooldown()
     {
+        _cooldownOn = true;
         yield return new WaitForSeconds(_attackCooldown);
-        _attackStarted = false;
+        _cooldownOn = false;
     }
     #endregion
 }

@@ -1,11 +1,15 @@
 
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 public class EnemyMovement : MonoBehaviour
 {
     // variables
     private GameObject _player;
     private Rigidbody2D _enemyRigidBody;
     private float _direction = 1.0f;
+    private bool _allyOnLeft;
+    private bool _allyOnRight;
     private enum EnemyStates
     {
         moving,
@@ -29,21 +33,29 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Update()
     {
+        float newDirection;
+        // gets player direction
+        if (_player.transform.position.x > transform.position.x)
+        {
+            newDirection = 1.0f;
+        }
+        else
+        {
+            newDirection = -1.0f;
+        }
+
         // based on states do things according to it
         switch (_currentState)
         {
             case EnemyStates.moving:
-                // gets player direction
-                if (_player.transform.position.x > transform.position.x)
+                if (_direction != newDirection)
                 {
-                    _enemyRigidBody.linearVelocityX = 2.0f * _enemySpeedMultipier;
-                    _direction = 1.0f;
+                    if ((_direction == -1.0f && _allyOnLeft) || (_direction == 1.0f && _allyOnRight))
+                    {
+                        _currentState = EnemyStates.stopped;
+                    }
                 }
-                else
-                {
-                    _enemyRigidBody.linearVelocityX = -2.0f * _enemySpeedMultipier;
-                    _direction = -1.0f;
-                }
+                _enemyRigidBody.linearVelocityX = 2.0f * _enemySpeedMultipier * _direction;
                 // randomly generate chance to jump 
                 if (Random.Range(1,720) == 1)
                 {
@@ -51,32 +63,67 @@ public class EnemyMovement : MonoBehaviour
                 }
                 break;
             case EnemyStates.jumping:
-                if (_player.transform.position.x > transform.position.x)
-                {
-                    _enemyRigidBody.linearVelocity = new Vector2 ( 2.0f, 10.0f);
-                    _direction = 1.0f;
-                }
-                else
-                {
-                    _enemyRigidBody.linearVelocity = new Vector2(- 2.0f, 10.0f);
-                    _direction = -1.0f;
-                }
+                _enemyRigidBody.linearVelocity = new Vector2(2.0f * newDirection, 10.0f);
                 _currentState = EnemyStates.inAir;
                 break;
-            // case EnemyStates.attacking:
-            // break;
+            case EnemyStates.stopped:
+                
+                if (_direction != newDirection)
+                {
+                    _direction = newDirection;
+                    if ((_direction == -1.0f && !_allyOnLeft) || (_direction == 1.0f && !_allyOnRight))
+                    {
+                        _currentState = EnemyStates.moving;
+                    }
+                }
+                break;
         }
+        _direction = newDirection;
     }
-    private void StopEnemy(float dir)
+    private void StopEnemy(float dir, bool isAlly)
     {
-        if (dir == _direction)
+        if (isAlly)
+        {
+            if (dir == _direction)
+            {
+                _currentState = EnemyStates.stopped;
+            }
+            switch (dir)
+            {
+                case -1.0f:
+                    _allyOnLeft = true;
+                    break;
+                case 1.0f:
+                    _allyOnRight = true;
+                    break;
+            }
+        }
+        else
         {
             _currentState = EnemyStates.stopped;
         }
     }
-    private void SetBackToMovingMode()
+    private void SetBackToMovingMode(float dir, bool isAlly)
     {
-        _currentState = EnemyStates.moving;
+        if (isAlly)
+        {
+            switch (dir)
+            {
+                case -1.0f:
+                    _allyOnLeft = false;
+                    break;
+                case 1.0f:
+                    _allyOnRight = false;
+                    break;
+            }
+        }
+        if (dir == _direction)
+        {
+            if ((!_allyOnLeft && _direction == -1.0f) || (!_allyOnRight && _direction == 1.0f))
+            {
+                _currentState = EnemyStates.moving;
+            }
+        }
     }
     // to tell code that the jump is over
     private void OnCollisionEnter2D(Collision2D collision)

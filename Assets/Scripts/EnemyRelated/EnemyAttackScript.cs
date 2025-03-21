@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAttackScript : MonoBehaviour
 {
+    // variables
     private bool _inRange;
     private bool _attacking;
     private float _waitBeforeActualAttack = 3.0f;
@@ -15,6 +16,7 @@ public class EnemyAttackScript : MonoBehaviour
     [SerializeField] private GameObject _hitbox;
     [SerializeField] private EnemyDamageHitBox _hitboxScript;
     private Collider2D _hitboxCollider;
+    // set up
     void Start()
     {
         _leftAttackRange.CollisionEvent += WithinRangeCall;
@@ -25,18 +27,26 @@ public class EnemyAttackScript : MonoBehaviour
         _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
         _hitboxCollider = _hitbox.GetComponent<Collider2D>();
     }
-    private void WithinRangeCall(float theDirection)
+    // if enemy discovered a player
+    private void WithinRangeCall(float theDirection, bool isAlly)
     {
-        _direction = theDirection;
-        _hitboxScript._direction = theDirection;
-        _inRange = true;
-        _attacking = true;
-        StartCoroutine(Attack());
+        if (!isAlly && !_attacking)
+        {
+            _direction = theDirection;
+            _hitboxScript._direction = theDirection;
+            _inRange = true;
+            _attacking = true;
+            StartCoroutine(Attack());
+        }
     }
-    private void OutOfRange()
+    // if player goes out of attack range
+    private void OutOfRange(float dir, bool isAlly)
     {
-        _inRange = false;
+        // because this only detects if player or enemy leaves the attack range
+        // and so if it is not the enemy it must be the player
+        _inRange = !isAlly;
     }
+    // attack
     private IEnumerator Attack()
     {
         _hitboxScript._damage = _damage;
@@ -45,11 +55,13 @@ public class EnemyAttackScript : MonoBehaviour
         _hitboxCollider.enabled = true;
         StartCoroutine(AttackDuration());
     }
+    // goes how long the attack should last
     private IEnumerator AttackDuration()
     {
         yield return new WaitForSeconds(.5f);
         EndAttack();
     }
+    // End the enemy attack
     private void EndAttack()
     {
         if (_attacking)
@@ -60,6 +72,7 @@ public class EnemyAttackScript : MonoBehaviour
             StartCoroutine(Cooldown());
         }
     }
+    // to prevent enemy from spamming
     private IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_attackCooldown);

@@ -26,7 +26,7 @@ public class CameraRestrictionScript : MonoBehaviour
             _camareObject.transform.parent = transform.parent;
             _camareObject.transform.position = _presetCamPos;
             // set up procedure to be called to relink the camera when player jumps
-            if (_player.transform.position.y > -1.595003 + 0.01f)
+            if (_player.transform.position.y > 2.904933 + 0.01f)
             {
                 _cameraPos = _presetCamPos;
                 StartCoroutine(MoveCameraUp());

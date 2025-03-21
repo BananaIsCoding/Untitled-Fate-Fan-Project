@@ -482,6 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rightAttackRangeScript: {fileID: 8233662276984602503}
   _leftAttackRangeScript: {fileID: 7515341452716512001}
+  _enemySpeedMultipier: 1
 --- !u!114 &3114672168597511773
 MonoBehaviour:
   m_ObjectHideFlags: 0

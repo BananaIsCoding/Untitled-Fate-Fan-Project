@@ -40,7 +40,6 @@ public class PlayerHitBoxScript : MonoBehaviour
                 if (_stunCoroutine != null)
                 {
                     StopCoroutine(_stunCoroutine);
-                    
                 }
                 // re-enable enemy movement after X Sec
                 _stunCoroutine = StartCoroutine(EnemyStunOff());

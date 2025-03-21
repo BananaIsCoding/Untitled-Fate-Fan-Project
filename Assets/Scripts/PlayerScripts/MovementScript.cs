@@ -133,12 +133,12 @@ public class MovementScript : MonoBehaviour
     private void TurnOnCrouch(InputAction.CallbackContext context)
     {
         // [NOTE] play crouching anim
-        _currentState = PlayerState.MovementLocked;
+        //_currentState = PlayerState.MovementLocked;
     }
     private void TurnOffCrouch(InputAction.CallbackContext context)
     {
         // play uncrouching anim
-        _currentState = PlayerState.MovementLocked;
+        //_currentState = PlayerState.MovementLocked;
     }
     #endregion
     #region Disabling And Re-enabling Movement
