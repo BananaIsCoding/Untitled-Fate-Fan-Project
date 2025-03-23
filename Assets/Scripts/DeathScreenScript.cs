@@ -29,18 +29,16 @@ public class DeathScreenScript : MonoBehaviour
     {
         AsyncOperation mainMenuScene = SceneManager.LoadSceneAsync(0);
         mainMenuScene.allowSceneActivation = false;
-        AsyncOperation InfiniteModeScene = SceneManager.LoadSceneAsync(3);
-        InfiniteModeScene.allowSceneActivation = false;
         while (true)
         {
-            if(_BTMMButtonPressed)
+            if (_retryPressed)
             {
-                mainMenuScene.allowSceneActivation = true;
+                SceneManager.LoadScene(3);
                 Time.timeScale = 1.0f;
             }
-            else if (_retryPressed)
+            if (_BTMMButtonPressed)
             {
-                InfiniteModeScene.allowSceneActivation = true;
+                mainMenuScene.allowSceneActivation = true;
                 Time.timeScale = 1.0f;
             }
             yield return null;

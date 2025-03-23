@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerAttackScript : MonoBehaviour
 {
@@ -13,22 +14,29 @@ public class PlayerAttackScript : MonoBehaviour
     private bool _attackSetUpStage;
     private bool _cooldownOn;
     private Coroutine _attackCoroutine;
+    private Coroutine _rushCoroutine;
+    private Coroutine _chargeArenaSkillCoroutine;
     private MovementScript _movementScript;
     private float _direction = 1.0f;
     private float _knockbackStrength = 5.0f;
     private InputAction _moveAction;
     private InputAction _crouchAction;
     private PlayerHitBoxScript _hitboxScript;
-    private PlayerRangedSliceScript _rangedSliceScript;
+    private PlayerRangedAttackV2 _rangedSliceScriptV2;
+    private RushHitDetectScript _rushHitDetectScript;
     private Animator _playerAnimator;
     private Rigidbody2D _playerRigidBody;
-    private string _attackCombo;
     private SpriteRenderer _spriteRenderer;
+    private Collider2D _playerCollider;
+    private string _attackCombo;
     [SerializeField] private float _originalYAxis = 2.904933f; 
     [SerializeField] private GameObject _hitbox;
     [SerializeField] private GameObject _rangeSlice;
+    [SerializeField] private GameObject _rushAttackRangeHitBox;
     [SerializeField] private float _damage;
     [SerializeField] private float _attackCooldown = 0.8f;
+    [SerializeField] private Slider _ArenaChargeUpSlider;
+    [SerializeField] private Image _areanHintImage;
     #endregion
     private void Start()
     {
@@ -43,9 +51,12 @@ public class PlayerAttackScript : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _playerCollider = GetComponent<Collider2D>();
         _hitboxScript = _hitbox.GetComponent<PlayerHitBoxScript>();
-        _rangedSliceScript = _rangeSlice.GetComponent<PlayerRangedSliceScript>();
+        _rangedSliceScriptV2 = _rangeSlice.GetComponent<PlayerRangedAttackV2>();
+        _rushHitDetectScript = _rushAttackRangeHitBox.GetComponent<RushHitDetectScript>();
         _hitboxScript.EndAttackEvent += EndTheAttack;
+        _rushHitDetectScript.EnemyDetectedEvent += RushDetectEnemy;
     }
     #region Attack conditions
     private void DefaultAttack(InputAction.CallbackContext context)
@@ -91,16 +102,25 @@ public class PlayerAttackScript : MonoBehaviour
         // play crouching anim
         _crouching = true;
         _attackCombo += "2";
+        _chargeArenaSkillCoroutine = StartCoroutine(ChargeSpecialArenaSkill());
+    }
+    private IEnumerator ChargeSpecialArenaSkill()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        Debug.Log("Charge Complete!");
     }
     private void TurnOffCrouch(InputAction.CallbackContext context)
     {
         // play uncrouching anim
         _crouching = false;
+        StopCoroutine(_chargeArenaSkillCoroutine);
     }
     #endregion
     #region Main Attack Code
     private IEnumerator PerformAttack()
     {
+        float attackduration = 0.2f;
         _movementScript.enabled = false;
         _knockbackStrength = 1.0f;
         if (gameObject.transform.position.y > _originalYAxis + 0.01f)
@@ -127,7 +147,7 @@ public class PlayerAttackScript : MonoBehaviour
                     _hitbox.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
                     _rangeSlice.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-                    _rangedSliceScript.StartAttack?.Invoke(2.5f, 1.0f, 1.0f);
+                    _rangedSliceScriptV2.StartAttack?.Invoke(2.5f, 1.0f, 1.0f);
                     break;
                 case "Z248":
                     Debug.Log("Left Ranged Attack!");
@@ -137,7 +157,7 @@ public class PlayerAttackScript : MonoBehaviour
                     _hitbox.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
                     _rangeSlice.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
-                    _rangedSliceScript.StartAttack?.Invoke(2.5f, 1.0f, -1.0f);
+                    _rangedSliceScriptV2.StartAttack?.Invoke(2.5f, 1.0f, -1.0f);
                     break;
                 case "ZZ8":
                     Debug.Log("Up special Attack!");
@@ -149,18 +169,26 @@ public class PlayerAttackScript : MonoBehaviour
                     _hitbox.transform.localPosition = new Vector3(_direction, -0.25f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(2.0f, 1.75f, 1.0f);
                     break;
-                case "Z22":
+                // removed (dont have the sprite)
+                /*case "Z22":
                     Debug.Log("Downslam Attack!");
                     // check in air
-                    break;
+                    break;*/
+                // Call a procedure to handle the rest of rush attack
                 case "Z66":
                     Debug.Log("Right Dash Attack!");
-                    break;
+                    _spriteRenderer.flipX = false;
+                    _rushCoroutine = StartCoroutine(RushAttackProcedure());
+                    yield break;
                 case "Z44":
                     Debug.Log("Left Dash Attack!");
-                    break;
+                    _spriteRenderer.flipX = true;
+                    _rushCoroutine = StartCoroutine(RushAttackProcedure());
+                    yield break;
                 case "Z4268":
-                    Debug.Log("Right Dash Attack!");
+                    Debug.Log("Ultimate!");
+                    _hitbox.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+                    _hitbox.transform.localScale = new Vector3(10.0f, 10.0f, 1.0f);
                     break;
                 default:
                     /*if (_crouching)
@@ -171,12 +199,22 @@ public class PlayerAttackScript : MonoBehaviour
                     if (_moveAction.ReadValue<Vector2>().x != 0)
                     {
                         Debug.Log("Move Attack!");
+                        if (_moveAction.ReadValue<Vector2>().x == 1)
+                        {
+                            _spriteRenderer.flipX = false;
+                        }
+                        else
+                        {
+                            _spriteRenderer.flipX = true;
+                        }
                         // Play Animation
                         _playerAnimator.Play("MiddleJabAttack");
-                        yield return new WaitForSeconds(.4f);
+                        /*yield return new WaitForSeconds(.4f);
                         // Place hitbox a bit infront of the player 
                         _hitbox.transform.localPosition = new Vector3(1.55f * _direction, 0.45f, 0.0f);
-                        _hitbox.transform.localScale = new Vector3(3.0f, 1.0f, 1.0f);
+                        _hitbox.transform.localScale = new Vector3(3.0f, 1.0f, 1.0f);*/
+                        StartCoroutine(DashAttackProcedure());
+                        yield break;
                     }
                     else
                     {
@@ -190,21 +228,71 @@ public class PlayerAttackScript : MonoBehaviour
                     break;
             }
         }
-        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength);
+        OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength);
         Debug.Log(_attackCombo);
         StartCoroutine(AttackCooldown());
     } 
     private void EndTheAttack()
     {
+        // tells code attack is over
         _attackCoroutine = null;
         _movementScript.enabled = true;
+        // mainly for the jump attack but it sets the gravity back to normal/initial value
         _playerRigidBody.gravityScale = 2;
     }
+    // So player does not spam the attacks
     private IEnumerator AttackCooldown()
     {
         _cooldownOn = true;
         yield return new WaitForSeconds(_attackCooldown);
         _cooldownOn = false;
+    }
+    #endregion
+    #region Special Attack Procedure
+    // Code for the dash attack
+    private IEnumerator DashAttackProcedure()
+    {
+        yield return new WaitForSeconds(.4f);
+        gameObject.layer = 8;
+        _hitbox.transform.localPosition = new Vector3(1.55f * _direction, 0.45f, 0.0f);
+        _hitbox.transform.localScale = new Vector3(3.0f, 1.0f, 1.0f);
+        _playerRigidBody.AddForceX(_direction * 2000);
+        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength);
+        yield return new WaitForSeconds(.1f);
+        gameObject.layer = 6;
+        EndTheAttack();
+        StartCoroutine(AttackCooldown());
+    }
+    // Code for the rush attack
+    private IEnumerator RushAttackProcedure()
+    {
+        _playerAnimator.Play("NeroRushAttack");
+        yield return new WaitForSeconds(0.8f);
+        gameObject.layer = 8;
+        _playerRigidBody.AddForceX(_direction * 1500);
+        _rushAttackRangeHitBox.transform.localPosition = new Vector3(_direction * 0.5f, 0.0f, 0.0f);
+        _rushAttackRangeHitBox.transform.localScale = new Vector3(1.0f, 1.75f, 1.0f);
+        OnPlayerAttack.Invoke(0.6f, _direction, _knockbackStrength);
+        yield return new WaitForSeconds(0.6f);
+        StartCoroutine(RushAttackEnd());
+    }
+    private void RushDetectEnemy()
+    {
+        _playerAnimator.Play("NeroRushAttackEnd");
+        StartCoroutine(RushAttackEnd());
+    }
+    private IEnumerator RushAttackEnd()
+    {
+        StopCoroutine(_rushCoroutine);
+        _rushAttackRangeHitBox.transform.localPosition = new Vector3(0.0f, -10.0f, 0.0f);
+        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength);
+        _playerRigidBody.linearVelocity = Vector2.zero;
+        _hitbox.transform.localPosition = new Vector3(_direction * 1.0f, 0.0f, 0.0f);
+        _hitbox.transform.localScale = new Vector3(1.75f, 1.75f, 1.0f);
+        gameObject.layer = 6;
+        yield return new WaitForSeconds(1.0f);
+        EndTheAttack();
+        StartCoroutine(AttackCooldown());
     }
     #endregion
 }

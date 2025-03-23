@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 9143487435446130095}
   - component: {fileID: 7958610009034246410}
   - component: {fileID: 5548957746476452374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TempEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -499,7 +499,7 @@ MonoBehaviour:
   _leftAttackRange: {fileID: 7515341452716512001}
   _rightAttackRange: {fileID: 8233662276984602503}
   _attackCooldown: 3
-  _damage: 6
+  _damage: 50
   _hitbox: {fileID: 2201077569478893942}
   _hitboxScript: {fileID: 6886264068474214161}
 --- !u!114 &9143487435446130095

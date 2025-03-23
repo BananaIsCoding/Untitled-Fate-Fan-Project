@@ -1,0 +1,886 @@
+fileFormatVersion: 2
+guid: 1433d367d60d9b640ae88870cee4b5b1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 816107908522855406
+    second: NeroDashAttack_0
+  - first:
+      213: -5519773118287214104
+    second: NeroDashAttack_1
+  - first:
+      213: 8878568290873260328
+    second: NeroDashAttack_2
+  - first:
+      213: -3256500458680545687
+    second: NeroDashAttack_3
+  - first:
+      213: -1092837663994326526
+    second: NeroDashAttack_4
+  - first:
+      213: -6194487732765243297
+    second: NeroDashAttack_5
+  - first:
+      213: -8162334615803792825
+    second: NeroDashAttack_6
+  - first:
+      213: 3881191351923930660
+    second: NeroDashAttack_7
+  - first:
+      213: -7712870010630662491
+    second: NeroDashAttack_8
+  - first:
+      213: -6816983785816407151
+    second: NeroDashAttack_9
+  - first:
+      213: 3893717704362290076
+    second: NeroDashAttack_10
+  - first:
+      213: 6464857501882513357
+    second: NeroDashAttack_11
+  - first:
+      213: 4097615259329456541
+    second: NeroDashAttack_12
+  - first:
+      213: 9056767129579453985
+    second: NeroDashAttack_13
+  - first:
+      213: -1246730802045258275
+    second: NeroDashAttack_14
+  - first:
+      213: -2863324511001336539
+    second: NeroDashAttack_15
+  - first:
+      213: 938086943287140124
+    second: NeroDashAttack_16
+  - first:
+      213: 2512230705878128810
+    second: NeroDashAttack_17
+  - first:
+      213: 2588266519321345411
+    second: NeroDashAttack_18
+  - first:
+      213: 2321954617602038702
+    second: NeroDashAttack_19
+  - first:
+      213: 7645025283324803564
+    second: NeroDashAttack_20
+  - first:
+      213: -621704919737689782
+    second: NeroDashAttack_21
+  - first:
+      213: -4585373746216815414
+    second: NeroDashAttack_22
+  - first:
+      213: 8228829683192073577
+    second: NeroDashAttack_23
+  - first:
+      213: 5647604812792087802
+    second: NeroDashAttack_24
+  - first:
+      213: -1940357723422226386
+    second: NeroDashAttack_25
+  - first:
+      213: 5653440385421086210
+    second: NeroDashAttack_26
+  - first:
+      213: -3660921922216584959
+    second: NeroDashAttack_27
+  - first:
+      213: -405752642625210592
+    second: NeroDashAttack_28
+  - first:
+      213: -6017438104622248297
+    second: NeroDashAttack_29
+  - first:
+      213: 163091390591747629
+    second: NeroDashAttack_30
+  - first:
+      213: -2278290894141903543
+    second: NeroDashAttack_31
+  - first:
+      213: 9179231069238709100
+    second: NeroDashAttack_32
+  - first:
+      213: -5486609438552347827
+    second: NeroDashAttack_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NeroDashAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1700
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb44e1a1d5635b00800000000000000
+      internalID: 816107908522855406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1700
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e98dbb0893d563b0800000000000000
+      internalID: -5519773118287214104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1700
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8293c83e1d2073b70800000000000000
+      internalID: 8878568290873260328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1700
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e037526169ec2d0800000000000000
+      internalID: -3256500458680545687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1700
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20253784fe575d0f0800000000000000
+      internalID: -1092837663994326526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1700
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5843031a32c80aa0800000000000000
+      internalID: -6194487732765243297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742f32fa9ef89be80800000000000000
+      internalID: -8162334615803792825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_7
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4267ebc98f2ccd530800000000000000
+      internalID: 3881191351923930660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_8
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a69891079166f490800000000000000
+      internalID: -7712870010630662491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_9
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 193c0de5d553561a0800000000000000
+      internalID: -6816983785816407151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_10
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9be9205f93490630800000000000000
+      internalID: 3893717704362290076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_11
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1275
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7f93b45a9c7b950800000000000000
+      internalID: 6464857501882513357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d996d864e57add830800000000000000
+      internalID: 4097615259329456541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e740438b910bd70800000000000000
+      internalID: 9056767129579453985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5fd85e0f8b2bee0800000000000000
+      internalID: -1246730802045258275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 525a81d178d6348d0800000000000000
+      internalID: -2863324511001336539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_16
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1fdf0fca11c40d00800000000000000
+      internalID: 938086943287140124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_17
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 850
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8d1b1448c3dd220800000000000000
+      internalID: 2512230705878128810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d7f24afae5be320800000000000000
+      internalID: 2588266519321345411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_19
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab5fb62c6d393020800000000000000
+      internalID: 2321954617602038702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_20
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce974777df5981a60800000000000000
+      internalID: 7645025283324803564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_21
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a491cef5ba24f57f0800000000000000
+      internalID: -621704919737689782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_22
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac438564fda7d50c0800000000000000
+      internalID: -4585373746216815414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_23
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 425
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d8ad7affca23270800000000000000
+      internalID: 8228829683192073577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af4424aa7a2506e40800000000000000
+      internalID: 5647604812792087802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_25
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e288b365ee67215e0800000000000000
+      internalID: -1940357723422226386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_26
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e0fdbc31e057e40800000000000000
+      internalID: 5653440385421086210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_27
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10917db78eac13dc0800000000000000
+      internalID: -3660921922216584959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroDashAttack_28
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 500
+        height: 425
+      alignment: 9
+      pivot: {x: 0.515, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027f5ad0f1a7e5af0800000000000000
+      internalID: -405752642625210592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cc459460281ab26448dd9ce41116a25b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NeroDashAttack_0: 816107908522855406
+      NeroDashAttack_1: -5519773118287214104
+      NeroDashAttack_10: 3893717704362290076
+      NeroDashAttack_11: 6464857501882513357
+      NeroDashAttack_12: 4097615259329456541
+      NeroDashAttack_13: 9056767129579453985
+      NeroDashAttack_14: -1246730802045258275
+      NeroDashAttack_15: -2863324511001336539
+      NeroDashAttack_16: 938086943287140124
+      NeroDashAttack_17: 2512230705878128810
+      NeroDashAttack_18: 2588266519321345411
+      NeroDashAttack_19: 2321954617602038702
+      NeroDashAttack_2: 8878568290873260328
+      NeroDashAttack_20: 7645025283324803564
+      NeroDashAttack_21: -621704919737689782
+      NeroDashAttack_22: -4585373746216815414
+      NeroDashAttack_23: 8228829683192073577
+      NeroDashAttack_24: 5647604812792087802
+      NeroDashAttack_25: -1940357723422226386
+      NeroDashAttack_26: 5653440385421086210
+      NeroDashAttack_27: -3660921922216584959
+      NeroDashAttack_28: -405752642625210592
+      NeroDashAttack_3: -3256500458680545687
+      NeroDashAttack_4: -1092837663994326526
+      NeroDashAttack_5: -6194487732765243297
+      NeroDashAttack_6: -8162334615803792825
+      NeroDashAttack_7: 3881191351923930660
+      NeroDashAttack_8: -7712870010630662491
+      NeroDashAttack_9: -6816983785816407151
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

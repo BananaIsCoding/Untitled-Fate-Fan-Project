@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfiniteMode.unity
     guid: 198ffb327c49be1479debe1236f09bd9
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: 9e0932d093f6ef74ba1f0e6317ec4af7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

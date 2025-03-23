@@ -109,6 +109,7 @@ public class MovementScript : MonoBehaviour
             }
         }
     }
+    // play the prep jumping animation (enabling opponent a chance to attack)
     private IEnumerator DelayedJump()
     {
         yield return new WaitForSeconds(0.3f);

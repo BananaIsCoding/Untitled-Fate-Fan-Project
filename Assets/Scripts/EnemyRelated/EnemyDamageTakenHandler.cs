@@ -11,16 +11,24 @@ public class EnemyDamageTakenHandler : MonoBehaviour
     private float _stunTime;
     void Start()
     {
-        DamageTakenEvent.AddListener(KnockbackAndStun);
+        // gets the movement script if it exist and use correct function based on if it exist
         _enemyMovementScript = gameObject.GetComponent<EnemyMovement>();
+        if (_enemyMovementScript != null)
+        {
+            DamageTakenEvent.AddListener(KnockbackAndStun);
+        }
+        else
+        {
+            DamageTakenEvent.AddListener(KnockbackOnly);
+        }
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
-       // _healthScript
     }
     private void KnockbackAndStun(Vector2 direction, float stunTime)
     {
         _stunTime = stunTime;
+        // knock enemy in a certain direction
         _rigidbody.linearVelocity = direction;
-        // get and cancel enemy's movement
+        //cancel enemy's movement
         _enemyMovementScript.enabled = false;
         if (_stunCoroutine != null)
         {
@@ -33,10 +41,11 @@ public class EnemyDamageTakenHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(_stunTime);
         // re-enable enemy movement
-        if (_enemyMovementScript != null)
-        {
-            _enemyMovementScript.enabled = true;
-        }
+        _enemyMovementScript.enabled = true;
         _stunCoroutine = null;
+    }
+    private void KnockbackOnly(Vector2 direction, float stunTime)
+    {
+        _rigidbody.linearVelocity = direction;
     }
 }
