@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerRangedAttackV2 : PlayerHitBoxScript
 {
-    public UnityEvent<float, float, float> StartAttack;
+    public UnityEvent<float, float, float, bool> StartAttack;
     private Rigidbody2D _rigidbody;
     private Coroutine _durationCoroutine;
     [SerializeField] private float _flyingSliceSpeedMultpier = 1.0f;
@@ -14,7 +14,7 @@ public class PlayerRangedAttackV2 : PlayerHitBoxScript
         _rigidbody = GetComponent<Rigidbody2D>();
         StartAttack.AddListener(CommenceTheAttack);
     }
-    private void CommenceTheAttack(float liftTime, float damage, float direction)
+    private void CommenceTheAttack(float liftTime, float direction, float damage, bool burnOn)
     {
         // check if the slash is already active
         if (_durationCoroutine != null)

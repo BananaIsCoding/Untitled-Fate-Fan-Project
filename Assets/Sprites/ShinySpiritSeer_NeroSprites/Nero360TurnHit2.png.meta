@@ -1,0 +1,549 @@
+fileFormatVersion: 2
+guid: f9f1c848921f1114ea9833c0eb404268
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7226701873182881940
+    second: NeroUltimate_0
+  - first:
+      213: 6457541314237563779
+    second: NeroUltimate_1
+  - first:
+      213: 6489006406126625034
+    second: NeroUltimate_2
+  - first:
+      213: -5626048551154957338
+    second: NeroUltimate_3
+  - first:
+      213: 3116386062986272523
+    second: NeroUltimate_4
+  - first:
+      213: -6055222200413214712
+    second: NeroUltimate_5
+  - first:
+      213: 2674468568685147146
+    second: NeroUltimate_6
+  - first:
+      213: 7626597079815044937
+    second: NeroUltimate_7
+  - first:
+      213: -2534452800416010574
+    second: NeroUltimate_8
+  - first:
+      213: -1870642743006213049
+    second: NeroUltimate_9
+  - first:
+      213: -3713853905209225753
+    second: NeroUltimate_10
+  - first:
+      213: 1773192677620843422
+    second: NeroUltimate_11
+  - first:
+      213: 8369726313586833961
+    second: NeroUltimate_12
+  - first:
+      213: 2559015608353793758
+    second: NeroUltimate_13
+  - first:
+      213: 6697833774998521878
+    second: NeroUltimate_14
+  - first:
+      213: -658891631003489596
+    second: NeroUltimate_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nero360TurnHit2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 850
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cf3de5fa4b2a042a3685fe9531c6a8
+      internalID: 1059620126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_1
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 850
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aca04d67b6fe0d240862fc58619e9073
+      internalID: -659756921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_2
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 850
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1778133e1b5535246bc908f5350571f1
+      internalID: -838424591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_3
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 850
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c3e3dea688d2c4a895f8c9ae065e41
+      internalID: 2047669675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_4
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 850
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba4b477706571f45872c210f9c11230
+      internalID: 49099329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_5
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 850
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c845fc6c4db5e042ad6e471c3c64904
+      internalID: -890244862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 425
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebac81ea6f71b34dabc16ca1f7bea09
+      internalID: 397082765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 425
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30bffff9b00bad747b7aeff88fba00a1
+      internalID: 1901409527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_8
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 425
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5317db9752dc4448895899ecec4b6c9
+      internalID: -1694725863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_9
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 425
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a4b446a2abe6347be308cfbe2d6ba6
+      internalID: -880532835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_10
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 425
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be551de3ee4138347b54ec3a9f623e76
+      internalID: -1945207157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_11
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 425
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a7e5bf713ac89419fb9ec2fd0669f6
+      internalID: 695345428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc6c8de582b66e408091c55c876b6a1
+      internalID: 43210604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_13
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c252cf910a525694ebff5a497ba39bce
+      internalID: 827297693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nero360TurnHit2_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 700
+        height: 425
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371c6f069d41d884e8d0eebb10a2055c
+      internalID: -830439079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: aa80ea110e8c6444eac7b5f2ecf38683
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Nero360TurnHit2_0: 1059620126
+      Nero360TurnHit2_1: -659756921
+      Nero360TurnHit2_10: -1945207157
+      Nero360TurnHit2_11: 695345428
+      Nero360TurnHit2_12: 43210604
+      Nero360TurnHit2_13: 827297693
+      Nero360TurnHit2_14: -830439079
+      Nero360TurnHit2_2: -838424591
+      Nero360TurnHit2_3: 2047669675
+      Nero360TurnHit2_4: 49099329
+      Nero360TurnHit2_5: -890244862
+      Nero360TurnHit2_6: 397082765
+      Nero360TurnHit2_7: 1901409527
+      Nero360TurnHit2_8: -1694725863
+      Nero360TurnHit2_9: -880532835
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,55 +1,40 @@
 fileFormatVersion: 2
-guid: 675a8bd0f569ca848979c09d236f5e5c
+guid: b92238ceac269b446ba7801447ff52ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3800328075916087595
-    second: NeroTurnSlash2_0
+      213: 7226701873182881940
+    second: NeroUltimate_0
   - first:
-      213: -5169831267434260012
-    second: NeroTurnSlash2_1
+      213: 6457541314237563779
+    second: NeroUltimate_1
   - first:
-      213: 3056407622403727195
-    second: NeroTurnSlash2_2
+      213: 6489006406126625034
+    second: NeroUltimate_2
   - first:
-      213: -3035965978582069871
-    second: NeroTurnSlash2_3
+      213: -5626048551154957338
+    second: NeroUltimate_3
   - first:
-      213: 8447086718245456573
-    second: NeroTurnSlash2_4
+      213: 3116386062986272523
+    second: NeroUltimate_4
   - first:
-      213: -7514122289247040369
-    second: NeroTurnSlash2_5
+      213: -6055222200413214712
+    second: NeroUltimate_5
   - first:
-      213: 857292348378257480
-    second: NeroTurnSlash2_6
+      213: 2674468568685147146
+    second: NeroUltimate_6
   - first:
-      213: 3269233042348678829
-    second: NeroTurnSlash2_7
+      213: 7626597079815044937
+    second: NeroUltimate_7
   - first:
-      213: -2290952811799004102
-    second: NeroTurnSlash2_8
+      213: -2534452800416010574
+    second: NeroUltimate_8
   - first:
-      213: -6029040516719195440
-    second: NeroTurnSlash2_9
+      213: -1870642743006213049
+    second: NeroUltimate_9
   - first:
-      213: 7964962301605243237
-    second: NeroTurnSlash2_10
-  - first:
-      213: -3253326579531778868
-    second: NeroTurnSlash2_11
-  - first:
-      213: -4807985991402269055
-    second: NeroTurnSlash2_12
-  - first:
-      213: 1511626852276432441
-    second: NeroTurnSlash2_13
-  - first:
-      213: -369569689139999035
-    second: NeroTurnSlash2_14
-  - first:
-      213: 9061075887880396691
-    second: NeroTurnSlash2_15
+      213: -3713853905209225753
+    second: NeroUltimate_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -184,331 +169,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NeroTurnSlash2_0
+      name: NeroUltimate_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 850
-        width: 700
-        height: 425
+        y: 246
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.6, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5dee31dffb5824bc0800000000000000
-      internalID: -3800328075916087595
+      spriteID: 49837b0a0176a4460800000000000000
+      internalID: 7226701873182881940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_1
+      name: NeroUltimate_1
       rect:
         serializedVersion: 2
-        x: 700
-        y: 850
-        width: 700
-        height: 425
+        x: 382
+        y: 246
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.6, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d99fdb6ad11148b0800000000000000
-      internalID: -5169831267434260012
+      spriteID: 3830a8d9c9bcd9950800000000000000
+      internalID: 6457541314237563779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_2
+      name: NeroUltimate_2
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 850
-        width: 700
-        height: 425
+        x: 764
+        y: 246
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.68, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5f9b2ef98a8a6a20800000000000000
-      internalID: 3056407622403727195
+      spriteID: a01696632f49d0a50800000000000000
+      internalID: 6489006406126625034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_3
+      name: NeroUltimate_3
       rect:
         serializedVersion: 2
-        x: 2100
-        y: 850
-        width: 700
-        height: 425
+        x: 1146
+        y: 246
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.6, y: 0.42}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19dc17817051ed5d0800000000000000
-      internalID: -3035965978582069871
+      spriteID: 6e3ce4b96a24ce1b0800000000000000
+      internalID: -5626048551154957338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_4
+      name: NeroUltimate_4
       rect:
         serializedVersion: 2
-        x: 2800
-        y: 850
-        width: 700
-        height: 425
+        x: 1528
+        y: 246
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.35, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbac0fb9d941a3570800000000000000
-      internalID: 8447086718245456573
+      spriteID: b0f564bec90af3b20800000000000000
+      internalID: 3116386062986272523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_5
+      name: NeroUltimate_5
       rect:
         serializedVersion: 2
-        x: 3500
-        y: 850
-        width: 700
-        height: 425
+        x: 1910
+        y: 246
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.5, y: 0.63}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8cc596e69978b790800000000000000
-      internalID: -7514122289247040369
+      spriteID: 808af4c9d7787fba0800000000000000
+      internalID: -6055222200413214712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 425
-        width: 700
-        height: 425
-      alignment: 9
-      pivot: {x: 0.45, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8481fb549d6b5eb00800000000000000
-      internalID: 857292348378257480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeroTurnSlash2_7
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 425
-        width: 700
-        height: 425
-      alignment: 9
-      pivot: {x: 0.45, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dae99218126ae5d20800000000000000
-      internalID: 3269233042348678829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeroTurnSlash2_8
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 425
-        width: 700
-        height: 425
-      alignment: 9
-      pivot: {x: 0.45, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3cb98f3e86e430e0800000000000000
-      internalID: -2290952811799004102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeroTurnSlash2_9
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 425
-        width: 700
-        height: 425
-      alignment: 9
-      pivot: {x: 0.45, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0dac380e79b845ca0800000000000000
-      internalID: -6029040516719195440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeroTurnSlash2_10
-      rect:
-        serializedVersion: 2
-        x: 2800
-        y: 425
-        width: 700
-        height: 425
-      alignment: 9
-      pivot: {x: 0.45, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 569ee8c530b398e60800000000000000
-      internalID: 7964962301605243237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeroTurnSlash2_11
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 425
-        width: 700
-        height: 425
-      alignment: 9
-      pivot: {x: 0.45, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc4fba876bcd9d2d0800000000000000
-      internalID: -3253326579531778868
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NeroTurnSlash2_12
+      name: NeroUltimate_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 700
-        height: 425
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.5, y: 0.64}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 186d961f63a964db0800000000000000
-      internalID: -4807985991402269055
+      spriteID: a04fc674efe9d1520800000000000000
+      internalID: 2674468568685147146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_13
+      name: NeroUltimate_7
       rect:
         serializedVersion: 2
-        x: 700
+        x: 382
         y: 0
-        width: 700
-        height: 425
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93ee0eafc906af410800000000000000
-      internalID: 1511626852276432441
+      spriteID: 94f386bf2ad17d960800000000000000
+      internalID: 7626597079815044937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NeroTurnSlash2_14
+      name: NeroUltimate_8
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 764
         y: 0
-        width: 700
-        height: 425
+        width: 382
+        height: 246
       alignment: 9
-      pivot: {x: 0.45, y: 0.32}
+      pivot: {x: 0.5, y: 0.65}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ce0f0763560fdaf0800000000000000
-      internalID: -369569689139999035
+      spriteID: 2bea53b2b90d3dcd0800000000000000
+      internalID: -2534452800416010574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroUltimate_9
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 0
+        width: 382
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74cc37916542a06e0800000000000000
+      internalID: -1870642743006213049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroUltimate_10
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 0
+        width: 382
+        height: 246
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed8e40dc8db57cc0800000000000000
+      internalID: -3713853905209225753
       vertices: []
       indices: 
       edges: []
@@ -517,7 +414,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fc76865c7e63b8a4fb8be46b3e9f3524
+    spriteID: b7d14d61266c9514a87b3fc345eeba47
     internalID: 0
     vertices: []
     indices: 
@@ -527,21 +424,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NeroTurnSlash2_0: -3800328075916087595
-      NeroTurnSlash2_1: -5169831267434260012
-      NeroTurnSlash2_10: 7964962301605243237
-      NeroTurnSlash2_11: -3253326579531778868
-      NeroTurnSlash2_12: -4807985991402269055
-      NeroTurnSlash2_13: 1511626852276432441
-      NeroTurnSlash2_14: -369569689139999035
-      NeroTurnSlash2_2: 3056407622403727195
-      NeroTurnSlash2_3: -3035965978582069871
-      NeroTurnSlash2_4: 8447086718245456573
-      NeroTurnSlash2_5: -7514122289247040369
-      NeroTurnSlash2_6: 857292348378257480
-      NeroTurnSlash2_7: 3269233042348678829
-      NeroTurnSlash2_8: -2290952811799004102
-      NeroTurnSlash2_9: -6029040516719195440
+      NeroUltimate_0: 7226701873182881940
+      NeroUltimate_1: 6457541314237563779
+      NeroUltimate_10: -3713853905209225753
+      NeroUltimate_2: 6489006406126625034
+      NeroUltimate_3: -5626048551154957338
+      NeroUltimate_4: 3116386062986272523
+      NeroUltimate_5: -6055222200413214712
+      NeroUltimate_6: 2674468568685147146
+      NeroUltimate_7: 7626597079815044937
+      NeroUltimate_8: -2534452800416010574
+      NeroUltimate_9: -1870642743006213049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

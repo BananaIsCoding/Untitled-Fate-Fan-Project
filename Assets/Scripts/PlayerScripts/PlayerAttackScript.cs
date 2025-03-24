@@ -7,12 +7,15 @@ using UnityEngine.UI;
 public class PlayerAttackScript : MonoBehaviour
 {
     #region Variables
-    public event Action<float, float, float> OnPlayerAttack;
+    public event Action<float, float, float, float> OnPlayerAttack;
     private bool _jumping;
     private bool _moveAttacking;
     private bool _crouching;
+    private bool _chargeDownComplete;
     private bool _attackSetUpStage;
     private bool _cooldownOn;
+    private bool _arenaActive;
+    private bool _arenaCooldown;
     private Coroutine _attackCoroutine;
     private Coroutine _rushCoroutine;
     private Coroutine _chargeArenaSkillCoroutine;
@@ -35,8 +38,11 @@ public class PlayerAttackScript : MonoBehaviour
     [SerializeField] private GameObject _rushAttackRangeHitBox;
     [SerializeField] private float _damage;
     [SerializeField] private float _attackCooldown = 0.8f;
+    [SerializeField] private Canvas _chargeDownSpecialCanvas;
     [SerializeField] private Slider _ArenaChargeUpSlider;
-    [SerializeField] private Image _areanHintImage;
+    [SerializeField] private Image _arenaHintImage;
+    [SerializeField] private Image _whiteScreen;
+    [SerializeField] private Grid _arenaBackground;
     #endregion
     private void Start()
     {
@@ -102,18 +108,32 @@ public class PlayerAttackScript : MonoBehaviour
         // play crouching anim
         _crouching = true;
         _attackCombo += "2";
-        _chargeArenaSkillCoroutine = StartCoroutine(ChargeSpecialArenaSkill());
+        if (!_arenaCooldown)
+        {
+            _chargeArenaSkillCoroutine = StartCoroutine(ChargeSpecialArenaSkill());
+        }
     }
     private IEnumerator ChargeSpecialArenaSkill()
     {
         yield return new WaitForSeconds(.5f);
-
-        Debug.Log("Charge Complete!");
+        _ArenaChargeUpSlider.value = 0;
+        float addAmount = 1.0f/15.0f;
+        _chargeDownSpecialCanvas.enabled = true;
+        for (int i = 0; i < 15; i++)
+        {
+            yield return new WaitForSeconds(.25f);
+            _ArenaChargeUpSlider.value += addAmount;
+        }
+        _arenaHintImage.enabled = true;
+        _chargeDownComplete = true;
     }
     private void TurnOffCrouch(InputAction.CallbackContext context)
     {
         // play uncrouching anim
         _crouching = false;
+        _chargeDownComplete = false;
+        _chargeDownSpecialCanvas.enabled = false;
+        _arenaHintImage.enabled = false;
         StopCoroutine(_chargeArenaSkillCoroutine);
     }
     #endregion
@@ -123,7 +143,32 @@ public class PlayerAttackScript : MonoBehaviour
         float attackduration = 0.2f;
         _movementScript.enabled = false;
         _knockbackStrength = 1.0f;
-        if (gameObject.transform.position.y > _originalYAxis + 0.01f)
+        if (_chargeDownComplete)
+        {
+            Debug.Log("Aestus Domus Aurea");
+            _chargeDownComplete = false;
+            _chargeDownSpecialCanvas.enabled = false;
+            _arenaHintImage.enabled = false;
+            tag = "Untagged";
+            _playerAnimator.Play("NeroSummonArena");
+            yield return new WaitForSeconds(.1f);
+            _whiteScreen.enabled = true;
+            for (float i = 0.9f; i >= 0; i -= 0.1f)
+            {
+                yield return new WaitForSeconds(.2f);
+                _whiteScreen.color = new Color (1,1,1,i);
+            }
+            _playerAnimator.Play("NeroSummonArenaEnd");
+            _arenaBackground.enabled = true;
+            _whiteScreen.enabled = false;
+            _arenaActive = true;
+            EndTheAttack();
+            StartCoroutine(AttackCooldown());
+            tag = "Player";
+            StartCoroutine(EndArenaField());
+            yield break;
+        }
+        else if (gameObject.transform.position.y > _originalYAxis + 0.01f)
         {
             _attackSetUpStage = false;
             Debug.Log("Jump Attack!");
@@ -136,6 +181,10 @@ public class PlayerAttackScript : MonoBehaviour
         else 
         {
             yield return new WaitForSeconds(0.5f);
+            if (_attackCombo == "Z426")
+            {
+                yield return new WaitForSeconds(0.25f);
+            }
             _attackSetUpStage = false;
             switch (_attackCombo)
             {
@@ -186,9 +235,14 @@ public class PlayerAttackScript : MonoBehaviour
                     _rushCoroutine = StartCoroutine(RushAttackProcedure());
                     yield break;
                 case "Z4268":
-                    Debug.Log("Ultimate!");
-                    _hitbox.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-                    _hitbox.transform.localScale = new Vector3(10.0f, 10.0f, 1.0f);
+                    if (_arenaActive)
+                    {
+                        Debug.Log("Ultimate!");
+                        _playerAnimator.Play("NeroUltimate");
+                        yield return new WaitForSeconds(.55f);
+                        _hitbox.transform.localPosition = new Vector3(0.0f, 3.0f, 0.0f);
+                        _hitbox.transform.localScale = new Vector3(25.0f, 10.0f, 1.0f);
+                    }
                     break;
                 default:
                     /*if (_crouching)
@@ -293,6 +347,15 @@ public class PlayerAttackScript : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         EndTheAttack();
         StartCoroutine(AttackCooldown());
+    }
+    private IEnumerator EndArenaField()
+    {
+        yield return new WaitForSeconds(45);
+        _arenaActive = false;
+        _arenaBackground.enabled = false;
+        _arenaCooldown = true;
+        yield return new WaitForSeconds(120);
+        _arenaCooldown = false;
     }
     #endregion
 }

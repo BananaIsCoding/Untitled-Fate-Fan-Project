@@ -34,9 +34,10 @@ public class PlayerHitBoxScript : MonoBehaviour
             collision.gameObject.GetComponent<EnemyDamageTakenHandler>().DamageTakenEvent?.Invoke(new Vector2 (_direction * _knockbackStrength, 1 * _knockbackStrength), _stunTime);
         }
     }
-    protected virtual void EnableHitBox(float lifetime, float direction, float knockbackStrength)
+    protected virtual void EnableHitBox(float lifetime, float direction, float knockbackStrength, float damage)
     {
         // set up hit box
+        _damage = damage;
         _direction = direction;
         _knockbackStrength = knockbackStrength;
         _hitboxCollider.enabled = true;

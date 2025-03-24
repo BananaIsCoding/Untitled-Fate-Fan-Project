@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: 6f9dd27e5a6f62c4881adb08c37eedd8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1260275925663719222
+    second: NeroSpawnArena_0
+  - first:
+      213: 6209961601326051266
+    second: NeroSpawnArena_1
+  - first:
+      213: -105524473424753673
+    second: NeroSpawnArena_2
+  - first:
+      213: 2026209330044665193
+    second: NeroSpawnArena_3
+  - first:
+      213: 5633712982007447265
+    second: NeroSpawnArena_4
+  - first:
+      213: -9168663426552529676
+    second: NeroSpawnArena_5
+  - first:
+      213: 8018124306745891132
+    second: NeroSpawnArena_6
+  - first:
+      213: -1116347473798438621
+    second: NeroSpawnArena_7
+  - first:
+      213: -6120498517073487045
+    second: NeroSpawnArena_8
+  - first:
+      213: -7533908081956039425
+    second: NeroSpawnArena_9
+  - first:
+      213: 8373543890331715959
+    second: NeroSpawnArena_10
+  - first:
+      213: 3882716236249922520
+    second: NeroSpawnArena_11
+  - first:
+      213: 4639737040291047310
+    second: NeroSpawnArena_12
+  - first:
+      213: 2005294249119279035
+    second: NeroSpawnArena_13
+  - first:
+      213: 3106860961113820352
+    second: NeroSpawnArena_14
+  - first:
+      213: 8510767295918228671
+    second: NeroSpawnArena_15
+  - first:
+      213: -2314151544954932165
+    second: NeroSpawnArena_16
+  - first:
+      213: 4640470871116769813
+    second: NeroSpawnArena_17
+  - first:
+      213: -2306699567257228113
+    second: NeroSpawnArena_18
+  - first:
+      213: 983828456360464826
+    second: NeroSpawnArena_19
+  - first:
+      213: 4357171921121490823
+    second: NeroSpawnArena_20
+  - first:
+      213: -4159432724189533713
+    second: NeroSpawnArena_21
+  - first:
+      213: -8120890895202191889
+    second: NeroSpawnArena_22
+  - first:
+      213: -648628382317666498
+    second: NeroSpawnArena_23
+  - first:
+      213: -8101856763692127798
+    second: NeroSpawnArena_24
+  - first:
+      213: 387150178805557929
+    second: NeroSpawnArena_25
+  - first:
+      213: -4696580148912873392
+    second: NeroSpawnArena_26
+  - first:
+      213: 621309684444944669
+    second: NeroSpawnArena_27
+  - first:
+      213: 1526742074533173992
+    second: NeroSpawnArena_28
+  - first:
+      213: 7331738787927428484
+    second: NeroSpawnArena_29
+  - first:
+      213: -6837936851244768944
+    second: NeroSpawnArena_30
+  - first:
+      213: -7193953782430748556
+    second: NeroSpawnArena_31
+  - first:
+      213: -2744925544129028474
+    second: NeroSpawnArena_32
+  - first:
+      213: 1272486562585389626
+    second: NeroSpawnArena_33
+  - first:
+      213: -5179248049071143779
+    second: NeroSpawnArena_34
+  - first:
+      213: 6237340978766248492
+    second: NeroSpawnArena_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Win64
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NeroSpawnArena_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1650
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f9924f6466d7110800000000000000
+      internalID: 1260275925663719222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_1
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1650
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cfead3bc273e2650800000000000000
+      internalID: 6209961601326051266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_2
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1650
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb486eec0a198ef0800000000000000
+      internalID: -105524473424753673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_3
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1650
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96df4ed76aa8e1c10800000000000000
+      internalID: 2026209330044665193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_4
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1650
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee7f03cb18fe2e40800000000000000
+      internalID: 5633712982007447265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_5
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1650
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc7833f03d52c080800000000000000
+      internalID: -9168663426552529676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1320
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39938c3399164f60800000000000000
+      internalID: 8018124306745891132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 1320
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321e65223efe180f0800000000000000
+      internalID: -1116347473798438621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_8
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1320
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b9789c60f9f0ba0800000000000000
+      internalID: -6120498517073487045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_9
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1320
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4d09c048e227790800000000000000
+      internalID: -7533908081956039425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_10
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1320
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7794d56adcdc43470800000000000000
+      internalID: 8373543890331715959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_11
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 1320
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db715968dd22e530800000000000000
+      internalID: 3882716236249922520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 990
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8725c97148a36040800000000000000
+      internalID: 4639737040291047310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_13
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 990
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb763ecbe7c34db10800000000000000
+      internalID: 2005294249119279035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_14
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 990
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ccc7b15599cd1b20800000000000000
+      internalID: 3106860961113820352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_15
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 990
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb4c73f73c15c1670800000000000000
+      internalID: 8510767295918228671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_16
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 990
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b343a864e6b72efd0800000000000000
+      internalID: -2314151544954932165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_17
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 990
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a6677cba3466040800000000000000
+      internalID: 4640470871116769813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 660
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: face51a07f4fcffd0800000000000000
+      internalID: -2306699567257228113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_19
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 660
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1594db4c247ad00800000000000000
+      internalID: 983828456360464826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_20
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 660
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787b0c7e6c8c77c30800000000000000
+      internalID: 4357171921121490823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_21
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 660
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe92c8799f9b646c0800000000000000
+      internalID: -4159432724189533713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_22
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 660
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5f4c3d1cccc4f80800000000000000
+      internalID: -8120890895202191889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_23
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 660
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f18b04ceb9ff6f0800000000000000
+      internalID: -648628382317666498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 330
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9e80be23c609f80800000000000000
+      internalID: -8101856763692127798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_25
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 330
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa2f62590f6f5500800000000000000
+      internalID: 387150178805557929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_26
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 330
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050a5e4fc3562deb0800000000000000
+      internalID: -4696580148912873392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_27
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 330
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19d9dcbdd55f9800800000000000000
+      internalID: 621309684444944669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_28
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 330
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea5138e3d3103510800000000000000
+      internalID: 1526742074533173992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_29
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 330
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d0e5815919fb560800000000000000
+      internalID: 7331738787927428484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051a009a9a4ca11a0800000000000000
+      internalID: -6837936851244768944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_31
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47033ab6621f92c90800000000000000
+      internalID: -7193953782430748556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_32
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e1b47c2c018e9d0800000000000000
+      internalID: -2744925544129028474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_33
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a2c5869c7c8a110800000000000000
+      internalID: 1272486562585389626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_34
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94ca77175d9f18b0800000000000000
+      internalID: -5179248049071143779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NeroSpawnArena_35
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 440
+        height: 330
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a7956c29c7f8650800000000000000
+      internalID: 6237340978766248492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1788616f5f89b0a4bba58b2f88c97ce3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NeroSpawnArena_0: 1260275925663719222
+      NeroSpawnArena_1: 6209961601326051266
+      NeroSpawnArena_10: 8373543890331715959
+      NeroSpawnArena_11: 3882716236249922520
+      NeroSpawnArena_12: 4639737040291047310
+      NeroSpawnArena_13: 2005294249119279035
+      NeroSpawnArena_14: 3106860961113820352
+      NeroSpawnArena_15: 8510767295918228671
+      NeroSpawnArena_16: -2314151544954932165
+      NeroSpawnArena_17: 4640470871116769813
+      NeroSpawnArena_18: -2306699567257228113
+      NeroSpawnArena_19: 983828456360464826
+      NeroSpawnArena_2: -105524473424753673
+      NeroSpawnArena_20: 4357171921121490823
+      NeroSpawnArena_21: -4159432724189533713
+      NeroSpawnArena_22: -8120890895202191889
+      NeroSpawnArena_23: -648628382317666498
+      NeroSpawnArena_24: -8101856763692127798
+      NeroSpawnArena_25: 387150178805557929
+      NeroSpawnArena_26: -4696580148912873392
+      NeroSpawnArena_27: 621309684444944669
+      NeroSpawnArena_28: 1526742074533173992
+      NeroSpawnArena_29: 7331738787927428484
+      NeroSpawnArena_3: 2026209330044665193
+      NeroSpawnArena_30: -6837936851244768944
+      NeroSpawnArena_31: -7193953782430748556
+      NeroSpawnArena_32: -2744925544129028474
+      NeroSpawnArena_33: 1272486562585389626
+      NeroSpawnArena_34: -5179248049071143779
+      NeroSpawnArena_35: 6237340978766248492
+      NeroSpawnArena_4: 5633712982007447265
+      NeroSpawnArena_5: -9168663426552529676
+      NeroSpawnArena_6: 8018124306745891132
+      NeroSpawnArena_7: -1116347473798438621
+      NeroSpawnArena_8: -6120498517073487045
+      NeroSpawnArena_9: -7533908081956039425
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
