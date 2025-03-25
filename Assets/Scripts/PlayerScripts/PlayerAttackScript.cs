@@ -15,7 +15,8 @@ public class PlayerAttackScript : MonoBehaviour
     private bool _attackSetUpStage;
     private bool _cooldownOn;
     private bool _arenaActive;
-    private bool _arenaCooldown;
+    private bool _arenaStrikeUsed;
+    private bool _ultimateBarMax;
     private Coroutine _attackCoroutine;
     private Coroutine _rushCoroutine;
     private Coroutine _chargeArenaSkillCoroutine;
@@ -27,6 +28,7 @@ public class PlayerAttackScript : MonoBehaviour
     private PlayerHitBoxScript _hitboxScript;
     private PlayerRangedAttackV2 _rangedSliceScriptV2;
     private RushHitDetectScript _rushHitDetectScript;
+    private UltimateBarScript _ultimateBarScript;
     private Animator _playerAnimator;
     private Rigidbody2D _playerRigidBody;
     private SpriteRenderer _spriteRenderer;
@@ -40,6 +42,7 @@ public class PlayerAttackScript : MonoBehaviour
     [SerializeField] private float _attackCooldown = 0.8f;
     [SerializeField] private Canvas _chargeDownSpecialCanvas;
     [SerializeField] private Slider _ArenaChargeUpSlider;
+    [SerializeField] private Slider _ultBarSlider;
     [SerializeField] private Image _arenaHintImage;
     [SerializeField] private Image _whiteScreen;
     [SerializeField] private Grid _arenaBackground;
@@ -54,6 +57,7 @@ public class PlayerAttackScript : MonoBehaviour
         _crouchAction.started += TurnOnCrouch;
         _crouchAction.canceled += TurnOffCrouch;
         _movementScript = GetComponent<MovementScript>();
+        _ultimateBarScript = GetComponent<UltimateBarScript>();
         _playerAnimator = GetComponent<Animator>();
         _playerRigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -63,6 +67,7 @@ public class PlayerAttackScript : MonoBehaviour
         _rushHitDetectScript = _rushAttackRangeHitBox.GetComponent<RushHitDetectScript>();
         _hitboxScript.EndAttackEvent += EndTheAttack;
         _rushHitDetectScript.EnemyDetectedEvent += RushDetectEnemy;
+        _ultimateBarScript.UltBarMaxed += UltReady;
     }
     #region Attack conditions
     private void DefaultAttack(InputAction.CallbackContext context)
@@ -108,7 +113,7 @@ public class PlayerAttackScript : MonoBehaviour
         // play crouching anim
         _crouching = true;
         _attackCombo += "2";
-        if (!_arenaCooldown)
+        if (_ultimateBarMax)
         {
             _chargeArenaSkillCoroutine = StartCoroutine(ChargeSpecialArenaSkill());
         }
@@ -121,11 +126,12 @@ public class PlayerAttackScript : MonoBehaviour
         _chargeDownSpecialCanvas.enabled = true;
         for (int i = 0; i < 15; i++)
         {
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(.05f);
             _ArenaChargeUpSlider.value += addAmount;
         }
         _arenaHintImage.enabled = true;
         _chargeDownComplete = true;
+        _chargeArenaSkillCoroutine =null;
     }
     private void TurnOffCrouch(InputAction.CallbackContext context)
     {
@@ -134,7 +140,14 @@ public class PlayerAttackScript : MonoBehaviour
         _chargeDownComplete = false;
         _chargeDownSpecialCanvas.enabled = false;
         _arenaHintImage.enabled = false;
-        StopCoroutine(_chargeArenaSkillCoroutine);
+       if (_chargeArenaSkillCoroutine != null)
+       {
+            StopCoroutine(_chargeArenaSkillCoroutine);
+       }
+    }
+    private void UltReady()
+    {
+        _ultimateBarMax = true;
     }
     #endregion
     #region Main Attack Code
@@ -143,25 +156,33 @@ public class PlayerAttackScript : MonoBehaviour
         float attackduration = 0.2f;
         _movementScript.enabled = false;
         _knockbackStrength = 1.0f;
-        if (_chargeDownComplete)
+        // code for the ultimate move
+        if (_ultimateBarMax && _chargeDownComplete)
         {
             Debug.Log("Aestus Domus Aurea");
+            // to prevent spamming
             _chargeDownComplete = false;
+            _ultimateBarMax = false;
+            _ultBarSlider.value = 0;
+            // hinding UI
             _chargeDownSpecialCanvas.enabled = false;
             _arenaHintImage.enabled = false;
+            // prevent player from being hurt during the move
             tag = "Untagged";
             _playerAnimator.Play("NeroSummonArena");
             yield return new WaitForSeconds(.1f);
             _whiteScreen.enabled = true;
+            // display the arena map override
+            _arenaBackground.enabled = true;
             for (float i = 0.9f; i >= 0; i -= 0.1f)
             {
                 yield return new WaitForSeconds(.2f);
                 _whiteScreen.color = new Color (1,1,1,i);
             }
             _playerAnimator.Play("NeroSummonArenaEnd");
-            _arenaBackground.enabled = true;
             _whiteScreen.enabled = false;
             _arenaActive = true;
+            _hitboxScript._burnOn = true;
             EndTheAttack();
             StartCoroutine(AttackCooldown());
             tag = "Player";
@@ -175,6 +196,7 @@ public class PlayerAttackScript : MonoBehaviour
             // Play Animation
             _playerAnimator.Play("NeroAirKick");
             // Place hitbox a bit infront of the player 
+            OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 3.0f);
             _hitbox.transform.localPosition = new Vector3(0.50f * _direction, -0.75f, 0);
             _hitbox.transform.localScale = new Vector3(1.75f, 0.75f, 1.0f);
         }
@@ -193,20 +215,22 @@ public class PlayerAttackScript : MonoBehaviour
                     _spriteRenderer.flipX = false;
                     _playerAnimator.Play("360TurnSlash");
                     yield return new WaitForSeconds(.38f);
+                    OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 5.0f);
+                    _rangedSliceScriptV2.StartAttack?.Invoke(2.5f, 3.0f, 1.0f);
                     _hitbox.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
                     _rangeSlice.transform.localPosition = new Vector3(1.0f, 0.0f, 0.0f);
-                    _rangedSliceScriptV2.StartAttack?.Invoke(2.5f, 1.0f, 1.0f);
                     break;
                 case "Z248":
                     Debug.Log("Left Ranged Attack!");
                     _spriteRenderer.flipX = true;
                     _playerAnimator.Play("360TurnSlash");
                     yield return new WaitForSeconds(.38f);
+                    OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 5.0f);
+                    _rangedSliceScriptV2.StartAttack?.Invoke(2.5f, 1.0f, -1.0f);
                     _hitbox.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(1.5f, 1.5f, 1.0f);
                     _rangeSlice.transform.localPosition = new Vector3(-1.0f, 0.0f, 0.0f);
-                    _rangedSliceScriptV2.StartAttack?.Invoke(2.5f, 1.0f, -1.0f);
                     break;
                 case "ZZ8":
                     Debug.Log("Up special Attack!");
@@ -215,6 +239,7 @@ public class PlayerAttackScript : MonoBehaviour
                     _playerRigidBody.linearVelocity = new Vector2(5 * _direction,15);
                     _playerRigidBody.gravityScale *= 1.75f;
                     yield return new WaitForSeconds(.75f);
+                    OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 7.0f);
                     _hitbox.transform.localPosition = new Vector3(_direction, -0.25f, 0.0f);
                     _hitbox.transform.localScale = new Vector3(2.0f, 1.75f, 1.0f);
                     break;
@@ -225,21 +250,22 @@ public class PlayerAttackScript : MonoBehaviour
                     break;*/
                 // Call a procedure to handle the rest of rush attack
                 case "Z66":
-                    Debug.Log("Right Dash Attack!");
+                    Debug.Log("Right Rush Attack!");
                     _spriteRenderer.flipX = false;
                     _rushCoroutine = StartCoroutine(RushAttackProcedure());
                     yield break;
                 case "Z44":
-                    Debug.Log("Left Dash Attack!");
+                    Debug.Log("Left Rush Attack!");
                     _spriteRenderer.flipX = true;
                     _rushCoroutine = StartCoroutine(RushAttackProcedure());
                     yield break;
                 case "Z4268":
-                    if (_arenaActive)
+                    if (_arenaActive && !_arenaStrikeUsed)
                     {
                         Debug.Log("Ultimate!");
                         _playerAnimator.Play("NeroUltimate");
                         yield return new WaitForSeconds(.55f);
+                        OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 10.0f);
                         _hitbox.transform.localPosition = new Vector3(0.0f, 3.0f, 0.0f);
                         _hitbox.transform.localScale = new Vector3(25.0f, 10.0f, 1.0f);
                     }
@@ -276,13 +302,13 @@ public class PlayerAttackScript : MonoBehaviour
                         // Play the animation
                         _playerAnimator.Play("NeroBasicAttack");
                         // Place hitbox a bit infront of the player
+                        OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 2.0f);
                         _hitbox.transform.localPosition = new Vector3(0.9f * _direction, -0.35f, 0.0f);
                         _hitbox.transform.localScale = new Vector3(1.5f, 1.25f, 1.0f);
                     }
                     break;
             }
         }
-        OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength);
         Debug.Log(_attackCombo);
         StartCoroutine(AttackCooldown());
     } 
@@ -293,6 +319,10 @@ public class PlayerAttackScript : MonoBehaviour
         _movementScript.enabled = true;
         // mainly for the jump attack but it sets the gravity back to normal/initial value
         _playerRigidBody.gravityScale = 2;
+        if (!_arenaActive)
+        {
+            _hitboxScript._burnOn = false;
+        }
     }
     // So player does not spam the attacks
     private IEnumerator AttackCooldown()
@@ -308,10 +338,10 @@ public class PlayerAttackScript : MonoBehaviour
     {
         yield return new WaitForSeconds(.4f);
         gameObject.layer = 8;
+        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength, 5.0f);
         _hitbox.transform.localPosition = new Vector3(1.55f * _direction, 0.45f, 0.0f);
         _hitbox.transform.localScale = new Vector3(3.0f, 1.0f, 1.0f);
         _playerRigidBody.AddForceX(_direction * 2000);
-        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength);
         yield return new WaitForSeconds(.1f);
         gameObject.layer = 6;
         EndTheAttack();
@@ -326,7 +356,7 @@ public class PlayerAttackScript : MonoBehaviour
         _playerRigidBody.AddForceX(_direction * 1500);
         _rushAttackRangeHitBox.transform.localPosition = new Vector3(_direction * 0.5f, 0.0f, 0.0f);
         _rushAttackRangeHitBox.transform.localScale = new Vector3(1.0f, 1.75f, 1.0f);
-        OnPlayerAttack.Invoke(0.6f, _direction, _knockbackStrength);
+        OnPlayerAttack.Invoke(0.6f, _direction, _knockbackStrength, 0.0f);
         yield return new WaitForSeconds(0.6f);
         StartCoroutine(RushAttackEnd());
     }
@@ -339,8 +369,8 @@ public class PlayerAttackScript : MonoBehaviour
     {
         StopCoroutine(_rushCoroutine);
         _rushAttackRangeHitBox.transform.localPosition = new Vector3(0.0f, -10.0f, 0.0f);
-        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength);
         _playerRigidBody.linearVelocity = Vector2.zero;
+        OnPlayerAttack.Invoke(1.0f, _direction, _knockbackStrength, 6.0f);
         _hitbox.transform.localPosition = new Vector3(_direction * 1.0f, 0.0f, 0.0f);
         _hitbox.transform.localScale = new Vector3(1.75f, 1.75f, 1.0f);
         gameObject.layer = 6;
@@ -353,9 +383,8 @@ public class PlayerAttackScript : MonoBehaviour
         yield return new WaitForSeconds(45);
         _arenaActive = false;
         _arenaBackground.enabled = false;
-        _arenaCooldown = true;
-        yield return new WaitForSeconds(120);
-        _arenaCooldown = false;
+        _arenaStrikeUsed = true;
+        _ultimateBarScript.enabled = true;
     }
     #endregion
 }

@@ -6,7 +6,9 @@ public class PlayerHitBoxScript : MonoBehaviour
 {
     //variable
     public event Action EndAttackEvent;
-    public float _damage = 5.0f;
+    public bool _burnOn;
+    public float _burnDamage = 1;
+    protected float _damage = 5.0f;
     protected Collider2D _hitboxCollider;
     protected float _direction;
     [SerializeField] protected float _knockbackStrength = 1.0f;
@@ -14,6 +16,7 @@ public class PlayerHitBoxScript : MonoBehaviour
     [SerializeField] protected float _stunTime = 1.0f;
     [SerializeField] protected TextMeshProUGUI _enemyNameDisplayer;
     [SerializeField] protected ComboScriptManager _comboScriptManager;
+    [SerializeField] protected UltimateBarScript _ultScript;
     protected virtual void Start()
     {
         _attackScript.OnPlayerAttack += EnableHitBox;
@@ -23,13 +26,18 @@ public class PlayerHitBoxScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Lol");
             // turn off collider once it hits smth
             _hitboxCollider.enabled = false;
             // move it out of the vicinity
             _enemyNameDisplayer.text = collision.gameObject.name;
-            collision.gameObject.GetComponent<HealthSystem>().DamageTakenEvent.Invoke(_damage);
+            HealthSystem enemyHealthScript = collision.gameObject.GetComponent<HealthSystem>();
+            enemyHealthScript.DamageTakenEvent.Invoke(_damage);
+            if (_burnOn)
+            {
+                enemyHealthScript.BurnEvent.Invoke(_burnDamage);
+            }
             _comboScriptManager.HitComboCounterEvent.Invoke();
+            _ultScript.UpdateUltBarEvent?.Invoke(.5f);
             // apply knockback to the enemy and cancel enemy's movement
             collision.gameObject.GetComponent<EnemyDamageTakenHandler>().DamageTakenEvent?.Invoke(new Vector2 (_direction * _knockbackStrength, 1 * _knockbackStrength), _stunTime);
         }

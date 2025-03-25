@@ -11,7 +11,7 @@ public class HealthSystem : MonoBehaviour
     public UnityEvent<float> BurnEvent;
     public event Action DeadEvent;
     public Slider _healthSlider;
-    private float _health;
+    public float _health;
     [SerializeField] private float _maxHealth = 100;
     void Start()
     {
@@ -31,14 +31,13 @@ public class HealthSystem : MonoBehaviour
         // adjust hp bar
         _healthSlider.value = _health / _maxHealth;
     }
-
     private void StartBurn(float BurnDamage = 1)
     {
         StartCoroutine(StartBurnDamage(BurnDamage));
     }
     private IEnumerator StartBurnDamage(float BurnDamage)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 5; i++)
         {
             yield return new WaitForSeconds(1);
             TakeDamage(BurnDamage);
