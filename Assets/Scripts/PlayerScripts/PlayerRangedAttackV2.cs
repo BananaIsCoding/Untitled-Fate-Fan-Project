@@ -34,6 +34,7 @@ public class PlayerRangedAttackV2 : PlayerHitBoxScript
         {
             _enemyNameDisplayer.text = collision.gameObject.name;
             collision.gameObject.GetComponent<HealthSystem>().DamageTakenEvent.Invoke(_damage);
+            collision.GetComponent<EnemyAttackScript>().enabled = false;
             _comboScriptManager.HitComboCounterEvent.Invoke();
             _ultScript.UpdateUltBarEvent?.Invoke(.01f);
             // get and cancel enemy's movement

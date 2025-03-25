@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyDamageHitBox : MonoBehaviour
 {
     public float _damage = 5.0f;
-    public event Action AttackEvent;
     public float _direction;
     [SerializeField] private float _stunTime = 0.5f;
     [SerializeField] private float _knockbackStrength = 1.0f;
@@ -14,13 +13,13 @@ public class EnemyDamageHitBox : MonoBehaviour
     private MovementScript _playerMovementScript;
     private Rigidbody2D _playerRigidbody;
     private Animator _playerAnimator;
+    private PlayerAttackScript _playerAttackScript;
     private Coroutine _stunCoroutine;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit " + collision.name + "!");
-
+            transform.localPosition = new Vector3(0, -10, 0);
             if (_playerHealthSystem == null)
             {
                 GameObject thePlayer = collision.gameObject;
@@ -28,12 +27,13 @@ public class EnemyDamageHitBox : MonoBehaviour
                 _playerMovementScript = thePlayer.GetComponent<MovementScript>();
                 _playerRigidbody = thePlayer.GetComponent<Rigidbody2D>();
                 _playerAnimator = thePlayer.GetComponent<Animator>();
+                _playerAttackScript = thePlayer.GetComponent<PlayerAttackScript>();
             }
             _playerMovementScript.enabled = false;
             _playerRigidbody.linearVelocity = new Vector2(_direction * _knockbackStrength, 1.5f * _knockbackStrength);
             _playerHealthSystem.DamageTakenEvent.Invoke(_damage);
             _playerAnimator.Play("TakeDamage");
-            AttackEvent?.Invoke();
+            _playerAttackScript.enabled = false;
             if (_stunCoroutine != null)
             {
                 StopCoroutine(_stunCoroutine);
@@ -45,6 +45,7 @@ public class EnemyDamageHitBox : MonoBehaviour
     {
         yield return new WaitForSeconds(_stunTime);
         _playerMovementScript.enabled = true;
+        _playerAttackScript.enabled = true;
         _stunCoroutine = null;
     }
 }

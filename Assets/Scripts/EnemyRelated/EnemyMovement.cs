@@ -10,6 +10,9 @@ public class EnemyMovement : MonoBehaviour
     private float _direction = 1.0f;
     private bool _allyOnLeft;
     private bool _allyOnRight;
+    private Animator _animator;
+    private SpriteRenderer _enemySprite;
+
     private enum EnemyStates
     {
         moving,
@@ -26,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
         // set ups
         _player = transform.parent.GetComponent<EnemySpawnerScript>()._player;
         _enemyRigidBody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _enemySprite = GetComponent<SpriteRenderer>();
         _rightAttackRangeScript.CollisionEvent += StopEnemy;
         _leftAttackRangeScript.CollisionEvent += StopEnemy;
         _rightAttackRangeScript.CollisionEndedEvent += SetBackToMovingMode;
@@ -38,12 +43,14 @@ public class EnemyMovement : MonoBehaviour
         if (_player.transform.position.x > transform.position.x)
         {
             newDirection = 1.0f;
+            _enemySprite.flipX = false;
+
         }
         else
         {
             newDirection = -1.0f;
+            _enemySprite.flipX = true;
         }
-
         // based on states do things according to it
         switch (_currentState)
         {
@@ -55,19 +62,19 @@ public class EnemyMovement : MonoBehaviour
                         _currentState = EnemyStates.stopped;
                     }
                 }
-                _enemyRigidBody.linearVelocityX = 2.0f * _enemySpeedMultipier * _direction;
+                _enemyRigidBody.linearVelocityX = 3.0f * _enemySpeedMultipier * _direction;
                 // randomly generate chance to jump 
                 if (Random.Range(1,720) == 1)
                 {
                     _currentState = EnemyStates.jumping;
                 }
+                
                 break;
             case EnemyStates.jumping:
-                _enemyRigidBody.linearVelocity = new Vector2(2.0f * newDirection, 10.0f);
+                _enemyRigidBody.linearVelocity = new Vector2(3.0f * newDirection, 10.0f);
                 _currentState = EnemyStates.inAir;
                 break;
             case EnemyStates.stopped:
-                
                 if (_direction != newDirection)
                 {
                     _direction = newDirection;
@@ -79,6 +86,7 @@ public class EnemyMovement : MonoBehaviour
                 break;
         }
         _direction = newDirection;
+        _animator.SetFloat("Speed", _enemyRigidBody.linearVelocity.magnitude);
     }
     private void StopEnemy(float dir, bool isAlly)
     {

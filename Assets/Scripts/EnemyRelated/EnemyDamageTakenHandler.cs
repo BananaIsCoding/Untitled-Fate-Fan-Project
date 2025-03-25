@@ -6,6 +6,8 @@ public class EnemyDamageTakenHandler : MonoBehaviour
 {
     public UnityEvent<Vector2, float> DamageTakenEvent;
     private EnemyMovement _enemyMovementScript;
+    private EnemyAttackScript _enemyAttackScript;
+    private Animator _animator;
     private Rigidbody2D _rigidbody;
     private Coroutine _stunCoroutine;
     private float _stunTime;
@@ -16,6 +18,8 @@ public class EnemyDamageTakenHandler : MonoBehaviour
         if (_enemyMovementScript != null)
         {
             DamageTakenEvent.AddListener(KnockbackAndStun);
+            _enemyAttackScript = gameObject.GetComponent<EnemyAttackScript>();
+            _animator = gameObject.GetComponent<Animator>();
         }
         else
         {
@@ -30,6 +34,7 @@ public class EnemyDamageTakenHandler : MonoBehaviour
         _rigidbody.linearVelocity = direction;
         //cancel enemy's movement
         _enemyMovementScript.enabled = false;
+        _enemyAttackScript.enabled = false;
         if (_stunCoroutine != null)
         {
             StopCoroutine(_stunCoroutine);
@@ -39,9 +44,11 @@ public class EnemyDamageTakenHandler : MonoBehaviour
     }
     private IEnumerator EnemyStunOff()
     {
+        _animator.Play("Hurt");
         yield return new WaitForSeconds(_stunTime);
         // re-enable enemy movement
         _enemyMovementScript.enabled = true;
+        _enemyAttackScript.enabled = true;
         _stunCoroutine = null;
     }
     private void KnockbackOnly(Vector2 direction, float stunTime)

@@ -9,13 +9,13 @@ public class UltimateBarScript : MonoBehaviour
     public event Action UltBarMaxed;
     private float _value = 0;
     [SerializeField] private Slider _ultBarSlider;
-    private void OnEnable()
+    [SerializeField] private Animator _ultBarChargeAnimator;
+    [SerializeField] private Image _ultChargeImage;
+
+    void Start()
     {
         UpdateUltBarEvent.AddListener(UpdateUltBar);
-    }
-    private void OnDisable()
-    {
-        UpdateUltBarEvent.RemoveListener(UpdateUltBar);
+        GetComponent<PlayerAttackScript>().UseUltEvent += UseUlt;
     }
     private void UpdateUltBar(float amountToAdd)
     {
@@ -23,12 +23,20 @@ public class UltimateBarScript : MonoBehaviour
         _value += amountToAdd;
         if (_value >= 1)
         {
-            _value = 0;
-            _ultBarSlider.value = 100;
+            _value = 1;
+            _ultBarChargeAnimator.SetBool("Max", true);
+            _ultChargeImage.enabled = true;
             UltBarMaxed?.Invoke();
-            this.enabled = false;
+            UpdateUltBarEvent.RemoveListener(UpdateUltBar);
         }
         _ultBarSlider.value = _value;
     }
-    
+    private void UseUlt()
+    {
+        _value = 0;
+        _ultBarSlider.value = 0;
+        _ultBarChargeAnimator.SetBool("Max", false);
+        _ultChargeImage.enabled = false;
+        UpdateUltBarEvent.AddListener(UpdateUltBar);
+    }
 }

@@ -9,6 +9,7 @@ public class ScoreManagerScript : MonoBehaviour
     public int _score;
     public int _timer;
     [SerializeField] private TextMeshProUGUI _scoreText;
+    [SerializeField] private RectTransform _scoreTextTransfrom;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,5 +30,17 @@ public class ScoreManagerScript : MonoBehaviour
     {
         _score += scoreToAdd;
         _scoreText.text = _score.ToString();
+        StartCoroutine(TextAnimation());
+    }
+    private IEnumerator TextAnimation()
+    {
+        _scoreText.fontSize = 75;
+        for (int i = 0; i < 5; i++)
+        {
+            _scoreTextTransfrom.rotation = Quaternion.Euler(0, 0 , Random.Range(-45, 45));
+            yield return new WaitForSeconds(.2f);
+        }
+        _scoreTextTransfrom.rotation = new Quaternion();
+        _scoreText.fontSize = 50;
     }
 }

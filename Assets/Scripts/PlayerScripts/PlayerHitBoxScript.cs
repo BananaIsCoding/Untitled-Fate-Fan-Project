@@ -26,8 +26,6 @@ public class PlayerHitBoxScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // turn off collider once it hits smth
-            _hitboxCollider.enabled = false;
             // move it out of the vicinity
             _enemyNameDisplayer.text = collision.gameObject.name;
             HealthSystem enemyHealthScript = collision.gameObject.GetComponent<HealthSystem>();

@@ -8,6 +8,7 @@ public class PlayerAttackScript : MonoBehaviour
 {
     #region Variables
     public event Action<float, float, float, float> OnPlayerAttack;
+    public event Action UseUltEvent;
     private bool _jumping;
     private bool _moveAttacking;
     private bool _crouching;
@@ -25,6 +26,7 @@ public class PlayerAttackScript : MonoBehaviour
     private float _knockbackStrength = 5.0f;
     private InputAction _moveAction;
     private InputAction _crouchAction;
+    private InputAction _attackAction;
     private PlayerHitBoxScript _hitboxScript;
     private PlayerRangedAttackV2 _rangedSliceScriptV2;
     private RushHitDetectScript _rushHitDetectScript;
@@ -42,7 +44,6 @@ public class PlayerAttackScript : MonoBehaviour
     [SerializeField] private float _attackCooldown = 0.8f;
     [SerializeField] private Canvas _chargeDownSpecialCanvas;
     [SerializeField] private Slider _ArenaChargeUpSlider;
-    [SerializeField] private Slider _ultBarSlider;
     [SerializeField] private Image _arenaHintImage;
     [SerializeField] private Image _whiteScreen;
     [SerializeField] private Grid _arenaBackground;
@@ -51,11 +52,12 @@ public class PlayerAttackScript : MonoBehaviour
     {
         _moveAction = InputSystem.actions.FindAction("Move");
         _crouchAction = InputSystem.actions.FindAction("Crouch");
+        _attackAction = InputSystem.actions.FindAction("Attack");
         InputSystem.actions.FindAction("Jump").started += Jumped;
-        InputSystem.actions.FindAction("Attack").performed += DefaultAttack;
         _moveAction.started += GetDirection;
         _crouchAction.started += TurnOnCrouch;
         _crouchAction.canceled += TurnOffCrouch;
+        _attackAction.performed += DefaultAttack;
         _movementScript = GetComponent<MovementScript>();
         _ultimateBarScript = GetComponent<UltimateBarScript>();
         _playerAnimator = GetComponent<Animator>();
@@ -68,6 +70,16 @@ public class PlayerAttackScript : MonoBehaviour
         _hitboxScript.EndAttackEvent += EndTheAttack;
         _rushHitDetectScript.EnemyDetectedEvent += RushDetectEnemy;
         _ultimateBarScript.UltBarMaxed += UltReady;
+    }
+    IEnumerator OnEnable()
+    {
+        yield return new WaitForEndOfFrame();
+        Debug.Log("Hi");
+        _attackAction.performed += DefaultAttack;
+    }
+    void OnDisable()
+    {
+        _attackAction.performed -= DefaultAttack;
     }
     #region Attack conditions
     private void DefaultAttack(InputAction.CallbackContext context)
@@ -163,10 +175,10 @@ public class PlayerAttackScript : MonoBehaviour
             // to prevent spamming
             _chargeDownComplete = false;
             _ultimateBarMax = false;
-            _ultBarSlider.value = 0;
             // hinding UI
             _chargeDownSpecialCanvas.enabled = false;
             _arenaHintImage.enabled = false;
+            UseUltEvent?.Invoke();
             // prevent player from being hurt during the move
             tag = "Untagged";
             _playerAnimator.Play("NeroSummonArena");

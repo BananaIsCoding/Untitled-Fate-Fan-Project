@@ -5,17 +5,32 @@ using UnityEngine;
 public class EnemyAttackScript : MonoBehaviour
 {
     // variables
+    private bool _stunned;
     private bool _inRange;
     private bool _attacking;
-    private float _waitBeforeActualAttack = 3.0f;
     private float _direction = 1.0f;
+    private int _attackAmount;
+    private Collider2D _hitboxCollider;
+    private Animator _enemyAnimator;
+    [SerializeField] private float _waitBeforeActualAttack = 3.0f;
     [SerializeField] private EnemyHitboxDetectScript _leftAttackRange;
     [SerializeField] private EnemyHitboxDetectScript _rightAttackRange;
     [SerializeField] private float _attackCooldown = 6.0f;
     [SerializeField] private float _damage = 6.0f;
     [SerializeField] private GameObject _hitbox;
     [SerializeField] private EnemyDamageHitBox _hitboxScript;
-    private Collider2D _hitboxCollider;
+    void OnEnable()
+    {
+        _stunned = false;
+    }
+    void OnDisable()
+    {
+        Debug.Log("Stunned");
+        _stunned = true;
+        _attacking = false;
+        _hitboxCollider.enabled = false;
+        _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
+    }
     // set up
     void Start()
     {
@@ -23,63 +38,57 @@ public class EnemyAttackScript : MonoBehaviour
         _leftAttackRange.CollisionEndedEvent += OutOfRange;
         _rightAttackRange.CollisionEvent += WithinRangeCall;
         _rightAttackRange.CollisionEndedEvent += OutOfRange;
-        _hitboxScript.AttackEvent += EndAttack;
         _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
         _hitboxCollider = _hitbox.GetComponent<Collider2D>();
+        _enemyAnimator = GetComponent<Animator>();
     }
     // if enemy discovered a player
     private void WithinRangeCall(float theDirection, bool isAlly)
     {
-        if (!isAlly && !_attacking)
+        if (!(isAlly || _attacking || _stunned))
         {
             _direction = theDirection;
             _hitboxScript._direction = theDirection;
             _inRange = true;
-            _attacking = true;
             StartCoroutine(Attack());
         }
     }
     // if player goes out of attack range
     private void OutOfRange(float dir, bool isAlly)
     {
-        // because this only detects if player or enemy leaves the attack range
-        // and so if it is not the enemy it must be the player
-        _inRange = !isAlly;
+        if (!isAlly)
+        {
+            _inRange = false;
+        }
     }
     // attack
     private IEnumerator Attack()
     {
-        _hitboxScript._damage = _damage;
-        yield return new WaitForSeconds(_waitBeforeActualAttack);
-        _hitbox.transform.localPosition = new Vector3(_direction, 0.0f, 0.0f);
-        _hitboxCollider.enabled = true;
-        StartCoroutine(AttackDuration());
-    }
-    // goes how long the attack should last
-    private IEnumerator AttackDuration()
-    {
-        yield return new WaitForSeconds(.5f);
-        EndAttack();
-    }
-    // End the enemy attack
-    private void EndAttack()
-    {
-        if (_attacking)
+        yield return new WaitForSeconds(1);
+        while (_inRange && !_stunned)
         {
+            _attacking = true;
+            _hitboxScript._damage = _damage;
+            _enemyAnimator.Play("Attack");
+            yield return new WaitForSeconds(_waitBeforeActualAttack);
+            _hitbox.transform.localPosition = new Vector3(_direction * 0.2f, 0.1f, 0.0f);
+            _hitboxCollider.enabled = true;
+            // goes how long the attack should last
+            yield return new WaitForSeconds(.5f);
+            // End the enemy attack
             _attacking = false;
             _hitboxCollider.enabled = false;
             _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
-            StartCoroutine(Cooldown());
-        }
-    }
-    // to prevent enemy from spamming
-    private IEnumerator Cooldown()
-    {
-        yield return new WaitForSeconds(_attackCooldown);
-        if (_inRange)
-        {
-            _attacking = true;
-            StartCoroutine(Attack());
+            _attackAmount++;
+            if (_attackAmount < 3)
+            {
+                yield return new WaitForSeconds(_attackCooldown);
+            }
+            else
+            {
+                _attackAmount = 0;
+                yield return new WaitForSeconds(_attackCooldown * 3);
+            }
         }
     }
 }
