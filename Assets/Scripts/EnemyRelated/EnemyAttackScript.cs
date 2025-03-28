@@ -22,14 +22,16 @@ public class EnemyAttackScript : MonoBehaviour
     void OnEnable()
     {
         _stunned = false;
+        StartCoroutine(Attack());
     }
     void OnDisable()
     {
-        Debug.Log("Stunned");
+        // disable enemies abillity to attack
         _stunned = true;
         _attacking = false;
         _hitboxCollider.enabled = false;
         _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
+        StopAllCoroutines();
     }
     // set up
     void Start()
@@ -47,9 +49,11 @@ public class EnemyAttackScript : MonoBehaviour
     {
         if (!(isAlly || _attacking || _stunned))
         {
+            // set values for attack and start it
             _direction = theDirection;
             _hitboxScript._direction = theDirection;
             _inRange = true;
+            StopAllCoroutines();
             StartCoroutine(Attack());
         }
     }
@@ -59,26 +63,30 @@ public class EnemyAttackScript : MonoBehaviour
         if (!isAlly)
         {
             _inRange = false;
+            _attacking = false;
         }
     }
-    // attack
+    // the attack code
     private IEnumerator Attack()
     {
         yield return new WaitForSeconds(1);
         while (_inRange && !_stunned)
         {
+            // Start the attack
             _attacking = true;
             _hitboxScript._damage = _damage;
             _enemyAnimator.Play("Attack");
             yield return new WaitForSeconds(_waitBeforeActualAttack);
+            // move hitbox to right position
             _hitbox.transform.localPosition = new Vector3(_direction * 0.2f, 0.1f, 0.0f);
             _hitboxCollider.enabled = true;
-            // goes how long the attack should last
+            // wait for how long the attack should last
             yield return new WaitForSeconds(.5f);
             // End the enemy attack
             _attacking = false;
             _hitboxCollider.enabled = false;
             _hitbox.transform.localPosition = new Vector3( 0.0f, -10.0f, 0.0f);
+            // To allow player to counter attack
             _attackAmount++;
             if (_attackAmount < 3)
             {
@@ -87,7 +95,7 @@ public class EnemyAttackScript : MonoBehaviour
             else
             {
                 _attackAmount = 0;
-                yield return new WaitForSeconds(_attackCooldown * 3);
+                yield return new WaitForSeconds(_attackCooldown + 3);
             }
         }
     }

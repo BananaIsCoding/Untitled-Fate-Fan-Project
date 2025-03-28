@@ -71,11 +71,12 @@ public class PlayerAttackScript : MonoBehaviour
         _rushHitDetectScript.EnemyDetectedEvent += RushDetectEnemy;
         _ultimateBarScript.UltBarMaxed += UltReady;
     }
-    IEnumerator OnEnable()
+    void OnEnable()
     {
-        yield return new WaitForEndOfFrame();
-        Debug.Log("Hi");
-        _attackAction.performed += DefaultAttack;
+        if (_attackAction != null)
+        {
+            _attackAction.performed += DefaultAttack;
+        }
     }
     void OnDisable()
     {
@@ -141,6 +142,8 @@ public class PlayerAttackScript : MonoBehaviour
             yield return new WaitForSeconds(.05f);
             _ArenaChargeUpSlider.value += addAmount;
         }
+        _chargeDownComplete = false;
+        _chargeDownSpecialCanvas.enabled = false;
         _arenaHintImage.enabled = true;
         _chargeDownComplete = true;
         _chargeArenaSkillCoroutine =null;
@@ -151,7 +154,6 @@ public class PlayerAttackScript : MonoBehaviour
         _crouching = false;
         _chargeDownComplete = false;
         _chargeDownSpecialCanvas.enabled = false;
-        _arenaHintImage.enabled = false;
        if (_chargeArenaSkillCoroutine != null)
        {
             StopCoroutine(_chargeArenaSkillCoroutine);
@@ -214,7 +216,12 @@ public class PlayerAttackScript : MonoBehaviour
         }
         else 
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
+            if (_attackCombo.Length == 2)
+            {
+                yield return new WaitForSeconds(0.3f);
+            }
+            // give player extra time to perform 
             if (_attackCombo == "Z426")
             {
                 yield return new WaitForSeconds(0.25f);
@@ -280,6 +287,10 @@ public class PlayerAttackScript : MonoBehaviour
                         OnPlayerAttack.Invoke(attackduration, _direction, _knockbackStrength, 10.0f);
                         _hitbox.transform.localPosition = new Vector3(0.0f, 3.0f, 0.0f);
                         _hitbox.transform.localScale = new Vector3(25.0f, 10.0f, 1.0f);
+                    }
+                    else
+                    {
+                        EndTheAttack();
                     }
                     break;
                 default:
@@ -395,7 +406,7 @@ public class PlayerAttackScript : MonoBehaviour
         yield return new WaitForSeconds(45);
         _arenaActive = false;
         _arenaBackground.enabled = false;
-        _arenaStrikeUsed = true;
+        _arenaStrikeUsed = false;
         _ultimateBarScript.enabled = true;
     }
     #endregion

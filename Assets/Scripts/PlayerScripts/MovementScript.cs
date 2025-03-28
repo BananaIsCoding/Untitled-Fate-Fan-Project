@@ -11,13 +11,16 @@ public class MovementScript : MonoBehaviour
     {
         MovementLocked,
         Unstunned,
-        Blocking
+        Blocking,
+        Dashing
     }
     private PlayerState _currentState;
     private InputAction _moveAction;
     private InputAction _jumpAction;
     private InputAction _crouchAction;
     private float _leftRightDirection;
+    private float _oldDirection;
+    private float _previousMovementPressTime;
     private Rigidbody2D _rigidbody;
     private Animator _charAnimator;
     private SpriteRenderer _charSpriteRenderer;
@@ -67,6 +70,16 @@ public class MovementScript : MonoBehaviour
                     _charAnimator.SetFloat("Speed", 1);
                     break;
             }
+            if (_leftRightDirection == _oldDirection && Time.time < _previousMovementPressTime + .5f)
+            {
+                Debug.Log("Dash");
+                _currentState = PlayerState.Dashing;
+            }
+            else
+            {
+                _oldDirection = _leftRightDirection;
+            }
+            _previousMovementPressTime = Time.time;
         }
     }
     private void StopMovement(InputAction.CallbackContext context)
@@ -77,13 +90,26 @@ public class MovementScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        float speed = _playerSpeed > _playerMaxSpeed ? _playerMaxSpeed : _playerSpeed;
         // moves player is not stunned
-        if (_currentState == PlayerState.Unstunned)
+        switch (_currentState)
         {
-            // move character
-            float speed = _playerSpeed > _playerMaxSpeed ? _playerMaxSpeed : _playerSpeed;
-            _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime), _rigidbody.linearVelocity.y);
+            case PlayerState.Unstunned:
+                // move character
+                _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime), _rigidbody.linearVelocity.y);
+                break;
+            case PlayerState.Dashing:
+                _rigidbody.linearVelocity = new Vector2(_leftRightDirection * (speed * Time.fixedDeltaTime) * -2.5f, _rigidbody.linearVelocity.y);
+                _charAnimator.Play("NeroDash");
+                _currentState = PlayerState.MovementLocked;
+                StartCoroutine(DashDuration());
+                break;
         }    
+    }
+    private IEnumerator DashDuration()
+    {
+        yield return new WaitForSeconds(.5f);
+        _currentState = PlayerState.Unstunned;
     }
     #region Jumping Related Functions
     private void Jump(InputAction.CallbackContext context)

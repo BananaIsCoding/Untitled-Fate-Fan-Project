@@ -35,11 +35,19 @@ public class PlayerHitBoxScript : MonoBehaviour
                 enemyHealthScript.BurnEvent.Invoke(_burnDamage);
             }
             _comboScriptManager.HitComboCounterEvent.Invoke();
-            _ultScript.UpdateUltBarEvent?.Invoke(.5f);
+            //_ultScript.UpdateUltBarEvent?.Invoke(.025f);
+            _ultScript.UpdateUltBarEvent?.Invoke(1f);
             // apply knockback to the enemy and cancel enemy's movement
             collision.gameObject.GetComponent<EnemyDamageTakenHandler>().DamageTakenEvent?.Invoke(new Vector2 (_direction * _knockbackStrength, 1 * _knockbackStrength), _stunTime);
         }
     }
+    /// <summary>
+    /// Activates the hitbox, making it able to hit things
+    /// </summary>
+    /// <param name="lifetime"></param>
+    /// <param name="direction"></param>
+    /// <param name="knockbackStrength"></param>
+    /// <param name="damage"></param>
     protected virtual void EnableHitBox(float lifetime, float direction, float knockbackStrength, float damage)
     {
         // set up hit box
