@@ -35,8 +35,7 @@ public class PlayerHitBoxScript : MonoBehaviour
                 enemyHealthScript.BurnEvent.Invoke(_burnDamage);
             }
             _comboScriptManager.HitComboCounterEvent.Invoke();
-            //_ultScript.UpdateUltBarEvent?.Invoke(.025f);
-            _ultScript.UpdateUltBarEvent?.Invoke(1f);
+            _ultScript.UpdateUltBarEvent?.Invoke(.025f);
             // apply knockback to the enemy and cancel enemy's movement
             collision.gameObject.GetComponent<EnemyDamageTakenHandler>().DamageTakenEvent?.Invoke(new Vector2 (_direction * _knockbackStrength, 1 * _knockbackStrength), _stunTime);
         }
